@@ -1,4 +1,4 @@
-Common Name;Name;CountryCode;NumberActors;MilFatalities;TotalFatalities;StartYear;StartMonth;StartDay;EndYear;EndMonth;EndDay;Region;Century;Decade;DurationD;DurationM;DurationY
+CommonName;Name;CountryCode;NumberActors;MilFatalities;TotalFatalities;StartYear;StartMonth;StartDay;EndYear;EndMonth;EndDay;Region;Century;Decade;DurationD;DurationM;DurationY
 ;England (Henry IV vs Richard II), 1400;;2;;;1400;1;;1400;2;;3;1;140;;1;0
 ;England-Scotland, 1400-02;;2;;;1400;;;1402;;;3;1;140;;;2
 ;Mongols (Timur)-Georgia, 1400;;2;;;1400;;;1400;;;4;1;140;;;0

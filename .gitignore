@@ -52,3 +52,6 @@ obj/
 
 # Visual Sturdio Settings
 .vs/
+
+# NuGet packages
+ConflictCatalogServer/packages/

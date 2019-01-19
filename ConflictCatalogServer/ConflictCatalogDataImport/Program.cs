@@ -1,4 +1,6 @@
-﻿using Logging;
+﻿using ConflictCatalogDataImport.Services;
+using DataRepository;
+using Logging;
 using Logging.Loggers;
 using System;
 using System.Collections.Generic;
@@ -20,7 +22,10 @@ namespace ConflictCatalogDataImport
                 var arguments = new ConflictCatalogProcessorArguments();
                 arguments.FileName = Config.FileName;
 
-                var processor = new ConflictCatalogProcessor();
+                var processor = new ConflictCatalogProcessor(
+                    new ImportConflictCatalogFile(),
+                    new ImportedConflictRepository());
+
                 processor.ProcessCatalog(arguments);
             }
             catch (Exception ex)

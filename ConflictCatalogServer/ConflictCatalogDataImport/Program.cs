@@ -10,6 +10,10 @@ namespace ConflictCatalogDataImport
     {
         static void Main(string[] args)
         {
+            var arguments = new ConflictCatalogProcessorArguments();
+
+            var processor = new ConflictCatalogProcessor();
+            processor.ProcessCatalog(arguments);
         }
     }
 }

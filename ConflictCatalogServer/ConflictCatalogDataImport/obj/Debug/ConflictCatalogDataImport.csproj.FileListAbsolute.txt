@@ -5,3 +5,15 @@ C:\Data\Projects\GlobalConflicts\ConflictCatalogDataImport\ConflictCatalogDataIm
 C:\Data\Projects\GlobalConflicts\ConflictCatalogDataImport\ConflictCatalogDataImport\obj\Debug\ConflictCatalogDataImport.csproj.CoreCompileInputs.cache
 C:\Data\Projects\GlobalConflicts\ConflictCatalogDataImport\ConflictCatalogDataImport\obj\Debug\ConflictCatalogDataImport.exe
 C:\Data\Projects\GlobalConflicts\ConflictCatalogDataImport\ConflictCatalogDataImport\obj\Debug\ConflictCatalogDataImport.pdb
+C:\Data\Projects\GlobalConflicts\ConflictCatalogServer\ConflictCatalogDataImport\obj\Debug\ConflictCatalogDataImport.csprojAssemblyReference.cache
+C:\Data\Projects\GlobalConflicts\ConflictCatalogServer\ConflictCatalogDataImport\obj\Debug\ConflictCatalogDataImport.csproj.CoreCompileInputs.cache
+C:\Data\Projects\GlobalConflicts\ConflictCatalogServer\ConflictCatalogDataImport\bin\Debug\ConflictCatalogDataImport.exe.config
+C:\Data\Projects\GlobalConflicts\ConflictCatalogServer\ConflictCatalogDataImport\bin\Debug\ConflictCatalogDataImport.exe
+C:\Data\Projects\GlobalConflicts\ConflictCatalogServer\ConflictCatalogDataImport\bin\Debug\ConflictCatalogDataImport.pdb
+C:\Data\Projects\GlobalConflicts\ConflictCatalogServer\ConflictCatalogDataImport\bin\Debug\Base.dll
+C:\Data\Projects\GlobalConflicts\ConflictCatalogServer\ConflictCatalogDataImport\bin\Debug\Base.pdb
+C:\Data\Projects\GlobalConflicts\ConflictCatalogServer\ConflictCatalogDataImport\obj\Debug\ConflictCatalogDataImport.csproj.CopyComplete
+C:\Data\Projects\GlobalConflicts\ConflictCatalogServer\ConflictCatalogDataImport\obj\Debug\ConflictCatalogDataImport.exe
+C:\Data\Projects\GlobalConflicts\ConflictCatalogServer\ConflictCatalogDataImport\obj\Debug\ConflictCatalogDataImport.pdb
+C:\Data\Projects\GlobalConflicts\ConflictCatalogServer\ConflictCatalogDataImport\bin\Debug\Logging.dll
+C:\Data\Projects\GlobalConflicts\ConflictCatalogServer\ConflictCatalogDataImport\bin\Debug\Logging.pdb

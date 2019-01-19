@@ -4,11 +4,11 @@ namespace Base.RuntimeChecks
 {
     public static class Argument
     {
-        public static void AssertIsNotNull(object obj)
+        public static void AssertIsNotNull(object argument, string argumentName)
         {
-            if (obj == null)
+            if (argument == null)
             {
-                throw new ArgumentNullException();
+                throw new ArgumentNullException(argumentName);
             }
         }
     }

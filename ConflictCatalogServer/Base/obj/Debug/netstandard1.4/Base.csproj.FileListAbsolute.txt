@@ -1,8 +1,0 @@
-C:\Data\Projects\GlobalConflicts\ConflictCatalogServer\Base\bin\Debug\netstandard1.4\Base.deps.json
-C:\Data\Projects\GlobalConflicts\ConflictCatalogServer\Base\bin\Debug\netstandard1.4\Base.dll
-C:\Data\Projects\GlobalConflicts\ConflictCatalogServer\Base\bin\Debug\netstandard1.4\Base.pdb
-C:\Data\Projects\GlobalConflicts\ConflictCatalogServer\Base\obj\Debug\netstandard1.4\Base.csproj.CoreCompileInputs.cache
-C:\Data\Projects\GlobalConflicts\ConflictCatalogServer\Base\obj\Debug\netstandard1.4\Base.AssemblyInfo.cs
-C:\Data\Projects\GlobalConflicts\ConflictCatalogServer\Base\obj\Debug\netstandard1.4\Base.dll
-C:\Data\Projects\GlobalConflicts\ConflictCatalogServer\Base\obj\Debug\netstandard1.4\Base.pdb
-C:\Data\Projects\GlobalConflicts\ConflictCatalogServer\Base\obj\Debug\netstandard1.4\Base.csprojAssemblyReference.cache

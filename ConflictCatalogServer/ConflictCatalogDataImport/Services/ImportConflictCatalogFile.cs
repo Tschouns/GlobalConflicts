@@ -27,8 +27,6 @@ namespace ConflictCatalogDataImport.Services
 
                 Logger.Log.Info($"{importedConflicts.Count()} records read.");
             }
-
-
         }
     }
 }

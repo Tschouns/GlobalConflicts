@@ -16,4 +16,19 @@
     <ProjectReference Include="..\Base\Base.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="Loggers\LoggerText.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>LoggerText.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Loggers\LoggerText.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>LoggerText.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
 </Project>

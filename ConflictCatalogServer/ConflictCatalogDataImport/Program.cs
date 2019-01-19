@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Logging;
+using Logging.Loggers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,10 +12,14 @@ namespace ConflictCatalogDataImport
     {
         static void Main(string[] args)
         {
+            Logger.SetLogger(new ConsoleLogger());
+
             var arguments = new ConflictCatalogProcessorArguments();
 
             var processor = new ConflictCatalogProcessor();
             processor.ProcessCatalog(arguments);
+
+            Console.ReadKey();
         }
     }
 }

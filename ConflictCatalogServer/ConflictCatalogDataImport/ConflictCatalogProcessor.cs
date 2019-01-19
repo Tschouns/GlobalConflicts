@@ -9,7 +9,7 @@ namespace ConflictCatalogDataImport
         {
             Argument.AssertIsNotNull(arguments, nameof(arguments));
 
-            Logger.Log.Error($"Starting to process {arguments.FileName}...");
+            Logger.Log.Info($"Starting to process {arguments.FileName}...");
         }
     }
 }

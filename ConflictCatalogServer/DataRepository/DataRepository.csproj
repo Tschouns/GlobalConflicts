@@ -12,4 +12,8 @@
     <OutputPath>..\bin\Release\netstandard1.4\</OutputPath>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="ConflictsDb.db" />
+  </ItemGroup>
+
 </Project>

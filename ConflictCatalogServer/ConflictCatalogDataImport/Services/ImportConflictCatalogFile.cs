@@ -23,9 +23,14 @@ namespace ConflictCatalogDataImport.Services
             {
                 csvReader.Configuration.HasHeaderRecord = true;
                 csvReader.Configuration.Delimiter = ";";
-                importedConflicts = csvReader.GetRecords<ImportedConflictRow>();
+                importedConflicts = csvReader.GetRecords<ImportedConflictRow>().ToList();
 
                 Logger.Log.Info($"{importedConflicts.Count()} records read.");
+            }
+
+            foreach (var row in importedConflicts)
+            {
+                Logger.Log.Info(row.Name);
             }
         }
     }

@@ -8,11 +8,11 @@ namespace ConflictCatalogImport
     public class ConflictCatalogProcessor
     {
         private readonly IImportConflictCatalogFile importConflictCatalogFile;
-        private readonly IImportedConflictDataAccess importedConflictRepository;
+        private readonly IImportedConflictRepository importedConflictRepository;
 
         public ConflictCatalogProcessor(
             IImportConflictCatalogFile importConflictCatalogFile,
-            IImportedConflictDataAccess importedConflictRepository)
+            IImportedConflictRepository importedConflictRepository)
         {
             Argument.AssertIsNotNull(importConflictCatalogFile, nameof(importConflictCatalogFile));
             Argument.AssertIsNotNull(importedConflictRepository, nameof(importedConflictRepository));
@@ -25,8 +25,11 @@ namespace ConflictCatalogImport
         {
             Argument.AssertIsNotNull(arguments, nameof(arguments));
 
-            Logger.Log.Info($"Starting to process {arguments.FileName}...");
+            Logger.Log.Info("Clearing imported conflicts...");
+            this.importedConflictRepository.ClearAll();
+            Logger.Log.Info("Cleared imported conflicts.");
 
+            Logger.Log.Info($"Starting to process {arguments.FileName}...");
             this.importConflictCatalogFile.Import(arguments.FileName, this.importedConflictRepository);
         }
     }

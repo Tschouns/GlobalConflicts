@@ -5,6 +5,6 @@ namespace ConflictCatalogImport.Services
 {
     public interface IImportConflictCatalogFile
     {
-        void Import(string fileName, IImportedConflictDataAccess targetRepository);
+        void Import(string fileName, IImportedConflictRepository targetRepository);
     }
 }

@@ -61,9 +61,18 @@ namespace DataRepository.DataAccess {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to DELETE FROM ImportedConflict;.
+        /// </summary>
+        internal static string ImportedConflictDeleteAll {
+            get {
+                return ResourceManager.GetString("ImportedConflictDeleteAll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to INSERT INTO
-        ///ImportedConflict(FullName,CommonName,NumberOfActors,MilFatalities,TotalFatalities,StartYear,StartMonth,StartDay,EndYear,EndMonth,EndDay)
-        ///VALUES (@FullName,@CommonName,@NumberOfActors,@MilFatalities,@TotalFatalities,@StartYear,@StartMonth,@StartDay,@EndYear,@EndMonth,@EndDay);.
+        ///ImportedConflict(Summary,CommonName,NumberOfActors,MilFatalities,TotalFatalities,StartYear,StartMonth,StartDay,EndYear,EndMonth,EndDay)
+        ///VALUES (@Summary,@CommonName,@NumberOfActors,@MilFatalities,@TotalFatalities,@StartYear,@StartMonth,@StartDay,@EndYear,@EndMonth,@EndDay);.
         /// </summary>
         internal static string ImportedConflictInsert {
             get {

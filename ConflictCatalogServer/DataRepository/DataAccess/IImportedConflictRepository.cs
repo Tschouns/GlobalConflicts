@@ -4,8 +4,9 @@ using System.Text;
 
 namespace DataRepository.DataAccess
 {
-    public interface IImportedConflictDataAccess
+    public interface IImportedConflictRepository
     {
         void Insert(ImportedConflictModel model);
+        int ClearAll();
     }
 }

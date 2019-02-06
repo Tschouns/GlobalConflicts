@@ -10,7 +10,7 @@ namespace ConflictCatalogImport.Services
 {
     public class ImportConflictCatalogFile : IImportConflictCatalogFile
     {
-        public void Import(string fileName, IImportedConflictDataAccess targetRepository)
+        public void Import(string fileName, IImportedConflictRepository targetRepository)
         {
             //Argument.AssertIsNotNull(targetRepository, nameof(targetRepository));
 
@@ -32,7 +32,7 @@ namespace ConflictCatalogImport.Services
 
                 targetRepository.Insert(new ImportedConflictModel()
                     {
-                        Name = row.Name,
+                        Summary = row.Name,
                         CommonName = row.CommonName,
 
                         NumberOfActors = row.NumberActors,

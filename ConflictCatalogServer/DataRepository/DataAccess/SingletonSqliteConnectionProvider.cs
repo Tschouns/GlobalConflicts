@@ -1,15 +1,15 @@
 ﻿using Base.RuntimeChecks;
 using System.Data;
-using System.Data.SqlClient;
+using System.Data.SQLite;
 
 namespace DataRepository.DataAccess
 {
-    public class SingletonSqlConnectionProvider : IDbConnectionProvider
+    public class SingletonSqliteConnectionProvider : IDbConnectionProvider
     {
         private readonly string connectionString;
         private IDbConnection sqlConnection;
         
-        public SingletonSqlConnectionProvider(string connectionString)
+        public SingletonSqliteConnectionProvider(string connectionString)
         {
             Argument.AssertIsNotNull(connectionString, nameof(connectionString));
 
@@ -22,8 +22,8 @@ namespace DataRepository.DataAccess
                 sqlConnection.State == ConnectionState.Closed ||
                 sqlConnection.State == ConnectionState.Broken)
             {
-                this.sqlConnection = new SqlConnection(this.connectionString);
-            }
+                this.sqlConnection = new SQLiteConnection(this.connectionString);
+                this.sqlConnection.Open();            }
 
             return this.sqlConnection;
         }

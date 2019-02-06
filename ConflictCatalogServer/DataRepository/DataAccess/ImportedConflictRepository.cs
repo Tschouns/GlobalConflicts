@@ -4,11 +4,11 @@ using System;
 
 namespace DataRepository.DataAccess
 {
-    public class ImportedConflictDataAccess : IImportedConflictDataAccess
+    public class ImportedConflictRepository : IImportedConflictRepository
     {
         private readonly IDbConnectionProvider dbConnectionProvider;
 
-        public ImportedConflictDataAccess(IDbConnectionProvider dbConnectionProvider)
+        public ImportedConflictRepository(IDbConnectionProvider dbConnectionProvider)
         {
             Argument.AssertIsNotNull(dbConnectionProvider, nameof(dbConnectionProvider));
 
@@ -27,6 +27,14 @@ namespace DataRepository.DataAccess
             {
                 throw new InvalidOperationException("The row could not be inserted!");
             }
+        }
+
+        public int ClearAll()
+        {
+            var connection = this.dbConnectionProvider.GetConnection();
+            var affectedRows = connection.Execute(SqlCommands.ImportedConflictDeleteAll);
+
+            return affectedRows;
         }
     }
 }

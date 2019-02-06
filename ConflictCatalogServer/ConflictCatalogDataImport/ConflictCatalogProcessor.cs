@@ -1,6 +1,6 @@
 ﻿using Base.RuntimeChecks;
 using ConflictCatalogDataImport.Services;
-using DataRepository;
+using DataRepository.DataAccess;
 using Logging;
 
 namespace ConflictCatalogDataImport
@@ -8,11 +8,11 @@ namespace ConflictCatalogDataImport
     public class ConflictCatalogProcessor
     {
         private readonly IImportConflictCatalogFile importConflictCatalogFile;
-        private readonly IImportedConflictRepository importedConflictRepository;
+        private readonly IImportedConflictDataAccess importedConflictRepository;
 
         public ConflictCatalogProcessor(
             IImportConflictCatalogFile importConflictCatalogFile,
-            IImportedConflictRepository importedConflictRepository)
+            IImportedConflictDataAccess importedConflictRepository)
         {
             Argument.AssertIsNotNull(importConflictCatalogFile, nameof(importConflictCatalogFile));
             Argument.AssertIsNotNull(importedConflictRepository, nameof(importedConflictRepository));
@@ -27,7 +27,7 @@ namespace ConflictCatalogDataImport
 
             Logger.Log.Info($"Starting to process {arguments.FileName}...");
 
-            this.importConflictCatalogFile.Import(arguments.FileName, null);
+            this.importConflictCatalogFile.Import(arguments.FileName, this.importedConflictRepository);
         }
     }
 }

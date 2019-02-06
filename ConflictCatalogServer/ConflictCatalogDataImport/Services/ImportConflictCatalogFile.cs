@@ -2,24 +2,22 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Base.RuntimeChecks;
 using CsvHelper;
-using DataRepository;
+using DataRepository.DataAccess;
 using Logging;
 
 namespace ConflictCatalogDataImport.Services
 {
     public class ImportConflictCatalogFile : IImportConflictCatalogFile
     {
-        public void Import(string fileName, IImportedConflictRepository targetRepository)
+        public void Import(string fileName, IImportedConflictDataAccess targetRepository)
         {
             //Argument.AssertIsNotNull(targetRepository, nameof(targetRepository));
 
             IEnumerable<ImportedConflictRow> importedConflicts = new ImportedConflictRow[0];
 
             Logger.Log.Info($"Reading CSV file '{fileName}'...");
-            using (var streamReader = new StreamReader(fileName))
-            using (var csvReader = new CsvReader(streamReader))
+            using (var csvReader = new CsvReader(new StreamReader(fileName)))
             {
                 csvReader.Configuration.HasHeaderRecord = true;
                 csvReader.Configuration.Delimiter = ";";
@@ -30,7 +28,25 @@ namespace ConflictCatalogDataImport.Services
 
             foreach (var row in importedConflicts)
             {
-                Logger.Log.Info(row.Name);
+                Logger.Log.Info("Saving conflict " + row.Name + "...");
+
+                targetRepository.Insert(new ImportedConflictModel()
+                    {
+                        Name = row.Name,
+                        CommonName = row.CommonName,
+
+                        NumberOfActors = row.NumberActors,
+                        MilFatalities = row.MilFatalities,
+                        TotalFatalities = row.TotalFatalities,
+
+                        StartYear = row.StartYear,
+                        StartMonth = row.StartMonth,
+                        StartDay = row.StartDay,
+
+                        EndYear = row.EndYear,
+                        EndMonth = row.EndMonth,
+                        EndDay = row.EndDay,
+                    });
             }
         }
     }

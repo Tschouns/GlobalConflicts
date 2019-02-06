@@ -6,6 +6,6 @@ namespace DataRepository.DataAccess
 {
     public interface IImportedConflictDataAccess
     {
-        void Insert(ImportedConflictRow model);
+        void Insert(ImportedConflictModel model);
     }
 }

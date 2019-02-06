@@ -1,5 +1,6 @@
 ﻿using ConflictCatalogDataImport.Services;
 using DataRepository;
+using DataRepository.DataAccess;
 using Logging;
 using Logging.Loggers;
 using System;
@@ -24,7 +25,7 @@ namespace ConflictCatalogDataImport
 
                 var processor = new ConflictCatalogProcessor(
                     new ImportConflictCatalogFile(),
-                    new ImportedConflictRepository());
+                    new ImportedConflictDataAccess(new SingletonSqlConnectionProvider(Config.ConnectionString)));
 
                 processor.ProcessCatalog(arguments);
             }

@@ -2,7 +2,7 @@
 using System.Data;
 using System.Data.SQLite;
 
-namespace DataRepository.Repository
+namespace DataRepository.DbConnection
 {
     public class SingletonSqliteConnectionProvider : IDbConnectionProvider
     {

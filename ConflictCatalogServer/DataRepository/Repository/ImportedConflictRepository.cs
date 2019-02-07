@@ -1,5 +1,6 @@
 ﻿using Base.RuntimeChecks;
 using Dapper;
+using DataRepository.DbConnection;
 using DataRepository.Model;
 using System;
 

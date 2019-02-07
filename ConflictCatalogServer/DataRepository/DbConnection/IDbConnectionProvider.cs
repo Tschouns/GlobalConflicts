@@ -1,7 +1,7 @@
 ﻿
 using System.Data;
 
-namespace DataRepository.Repository
+namespace DataRepository.DbConnection
 {
     public interface IDbConnectionProvider
     {

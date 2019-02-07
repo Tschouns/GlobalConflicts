@@ -1,6 +1,6 @@
 ﻿using System;
 using ConflictCatalogImport.Services;
-using DataRepository.DataAccess;
+using DataRepository.Repository;
 using Logging;
 using Logging.Loggers;
 

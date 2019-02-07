@@ -5,11 +5,11 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <OutputPath>..\bin\Debug\netstandard1.4\</OutputPath>
+    <OutputPath></OutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <OutputPath>..\bin\Release\netstandard1.4\</OutputPath>
+    <OutputPath></OutputPath>
   </PropertyGroup>
 
   <ItemGroup>
@@ -27,7 +27,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="DataAccess\SqlCommands.Designer.cs">
+    <Compile Update="Repository\SqlCommands.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>SqlCommands.resx</DependentUpon>
@@ -35,7 +35,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="DataAccess\SqlCommands.resx">
+    <EmbeddedResource Update="Repository\SqlCommands.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>SqlCommands.Designer.cs</LastGenOutput>
     </EmbeddedResource>

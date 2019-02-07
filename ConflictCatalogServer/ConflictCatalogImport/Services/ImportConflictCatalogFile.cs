@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using CsvHelper;
-using DataRepository.DataAccess;
+using DataRepository.Model;
+using DataRepository.Repository;
 using Logging;
 
 namespace ConflictCatalogImport.Services

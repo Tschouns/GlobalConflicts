@@ -2,9 +2,7 @@
 
 namespace DataRepository.Repository
 {
-    public interface IImportedConflictRepository
+    public interface IImportedConflictRepository : IInsert<ImportedConflictModel>, IClearAll
     {
-        void Insert(ImportedConflictModel model);
-        int ClearAll();
     }
 }

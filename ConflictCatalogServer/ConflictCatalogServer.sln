@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Logging", "Logging\Logging.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataRepository", "DataRepository\DataRepository.csproj", "{AB53584E-C3A8-4F2B-BF19-5172CB1700F4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConflictCatalogImport", "ConflictCatalogImport\ConflictCatalogImport.csproj", "{D1009AB0-D932-4A14-9042-B18B6C4A275F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConflictCatalogImport", "ConflictCatalogImport\ConflictCatalogImport.csproj", "{D1009AB0-D932-4A14-9042-B18B6C4A275F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{492E5EC8-7B03-411C-A48E-8DFF6371FFF5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{D1009AB0-D932-4A14-9042-B18B6C4A275F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D1009AB0-D932-4A14-9042-B18B6C4A275F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D1009AB0-D932-4A14-9042-B18B6C4A275F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{492E5EC8-7B03-411C-A48E-8DFF6371FFF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{492E5EC8-7B03-411C-A48E-8DFF6371FFF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{492E5EC8-7B03-411C-A48E-8DFF6371FFF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{492E5EC8-7B03-411C-A48E-8DFF6371FFF5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

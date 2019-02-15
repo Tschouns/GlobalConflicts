@@ -1,5 +1,5 @@
 ﻿using System;
-using ConflictCatalogImport.Services;
+using Services;
 using DataRepository.DbConnection;
 using DataRepository.Repository;
 using Logging;

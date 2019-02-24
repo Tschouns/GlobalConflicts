@@ -3,12 +3,19 @@ using Dapper;
 using DataRepository.DbConnection;
 using DataRepository.Model;
 using System;
+using System.Collections.Generic;
 
 namespace DataRepository.Repository
 {
     public class ImportedConflictRepository : IImportedConflictRepository
     {
         private readonly IDbConnectionProvider dbConnectionProvider;
+
+        public IReadOnlyCollection<ImportedConflictModel> ReadAll()
+        {
+            var connection = this.dbConnectionProvider.GetConnection();
+
+        }
 
         public ImportedConflictRepository(IDbConnectionProvider dbConnectionProvider)
         {

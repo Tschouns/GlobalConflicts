@@ -11,17 +11,20 @@ namespace DataRepository.Repository
     {
         private readonly IDbConnectionProvider dbConnectionProvider;
 
-        public IReadOnlyCollection<ImportedConflictModel> ReadAll()
-        {
-            var connection = this.dbConnectionProvider.GetConnection();
-
-        }
-
         public ImportedConflictRepository(IDbConnectionProvider dbConnectionProvider)
         {
             Argument.AssertIsNotNull(dbConnectionProvider, nameof(dbConnectionProvider));
 
             this.dbConnectionProvider = dbConnectionProvider;
+        }
+
+        public IReadOnlyCollection<ImportedConflictModel> ReadAll()
+        {
+            var connection = this.dbConnectionProvider.GetConnection();
+
+            var importedConflicts = connection.Query<ImportedConflictModel>(SqlCommands.ImportedConflictSelectAll);
+
+            return importedConflicts.AsList();
         }
 
         public void Insert(ImportedConflictModel model)

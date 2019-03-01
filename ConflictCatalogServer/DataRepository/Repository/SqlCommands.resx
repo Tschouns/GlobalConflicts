@@ -125,4 +125,7 @@
 ImportedConflict(Summary,CommonName,NumberOfActors,MilFatalities,TotalFatalities,StartYear,StartMonth,StartDay,EndYear,EndMonth,EndDay)
 VALUES (@Summary,@CommonName,@NumberOfActors,@MilFatalities,@TotalFatalities,@StartYear,@StartMonth,@StartDay,@EndYear,@EndMonth,@EndDay);</value>
   </data>
+  <data name="ImportedConflictSelectAll" xml:space="preserve">
+    <value>SELECT * FROM ImportedConflict;</value>
+  </data>
 </root>

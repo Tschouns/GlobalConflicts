@@ -10,7 +10,16 @@ namespace ConflictAndActorMapping
         {
             Logger.SetLogger(new ConsoleLogger());
 
+            try
+            {
+                
+            }
+            catch (Exception ex)
+            {
+                Logger.Log.Error(ex);
+            }
 
+            Console.ReadKey();
         }
     }
 }

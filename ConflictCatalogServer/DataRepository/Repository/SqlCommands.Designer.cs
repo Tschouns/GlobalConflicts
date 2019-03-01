@@ -79,5 +79,14 @@ namespace DataRepository.Repository {
                 return ResourceManager.GetString("ImportedConflictInsert", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SELECT * FROM ImportedConflict;.
+        /// </summary>
+        internal static string ImportedConflictSelectAll {
+            get {
+                return ResourceManager.GetString("ImportedConflictSelectAll", resourceCulture);
+            }
+        }
     }
 }

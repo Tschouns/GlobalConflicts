@@ -19,7 +19,7 @@ namespace ConflictCatalogImport
                 arguments.FileName = Config.FileName;
 
                 var processor = new ConflictCatalogProcessor(
-                    new ImportConflictCatalogFile(),
+                    new ImportConflictCatalogFileService(),
                     new ImportedConflictRepository(new SingletonSqliteConnectionProvider(Config.ConnectionString)));
 
                 processor.ProcessCatalog(arguments);

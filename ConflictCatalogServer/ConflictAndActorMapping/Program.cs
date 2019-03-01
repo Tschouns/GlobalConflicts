@@ -1,5 +1,8 @@
-﻿using Logging;
+﻿using DataRepository.DbConnection;
+using DataRepository.Repository;
+using Logging;
 using Logging.Loggers;
+using Services.Parser;
 using System;
 
 namespace ConflictAndActorMapping
@@ -12,7 +15,11 @@ namespace ConflictAndActorMapping
 
             try
             {
-                
+                var processor = new ImportedConflictProcessor(
+                    new ImportedConflictRepository(new SingletonSqliteConnectionProvider(Config.ConnectionString)),
+                    new ParseImportedConflictSummaryService());
+
+                processor.Process();
             }
             catch (Exception ex)
             {

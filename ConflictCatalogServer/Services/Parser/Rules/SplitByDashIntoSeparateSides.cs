@@ -4,11 +4,11 @@ using System.Linq;
 
 namespace Services.Parser.Rules
 {
-    internal class SplitByCommaIntoSeparateSides : IParserRule<IBuildConflict>
+    internal class SplitByDashIntoSeparateSides : IParserRule<IBuildConflict>
     {
         private readonly IParserRule<IBuildSide> followUpRule;
 
-        public SplitByCommaIntoSeparateSides(IParserRule<IBuildSide> followUpRule)
+        public SplitByDashIntoSeparateSides(IParserRule<IBuildSide> followUpRule)
         {
             Argument.AssertIsNotNull(followUpRule, nameof(followUpRule));
 
@@ -20,7 +20,7 @@ namespace Services.Parser.Rules
             Argument.AssertStringIsNotEmpty(textToParse, nameof(textToParse));
             Argument.AssertIsNotNull(conflictBuilder, nameof(conflictBuilder));
 
-            var sideStrings = ParserHelper.SplitByCharacterNotInBrackets(textToParse, ',')
+            var sideStrings = ParserHelper.SplitByCharacterNotInBrackets(textToParse, '-')
                 .Select(s => s.Trim())
                 .Where(s => !string.IsNullOrWhiteSpace(s))
                 .ToList();

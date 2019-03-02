@@ -1,16 +1,15 @@
 ﻿using Base.RuntimeChecks;
 using Services.Parser.Builder;
-using System.Linq;
 
 namespace Services.Parser.Rules
 {
     internal class SidesOrNoSidesRule : IParserRule<IBuildConflict>
     {
-        IParserRule<IBuildSide> sidesDefinedFollowUpRule;
+        IParserRule<IBuildConflict> sidesDefinedFollowUpRule;
         IParserRule<IBuildConflict> noSidesDefinedFollowUpRule;
 
         public SidesOrNoSidesRule(
-            IParserRule<IBuildSide> sidesDefinedFollowUpRule,
+            IParserRule<IBuildConflict> sidesDefinedFollowUpRule,
             IParserRule<IBuildConflict> noSidesDefinedFollowUpRule)
         {
             this.sidesDefinedFollowUpRule = sidesDefinedFollowUpRule;
@@ -23,21 +22,13 @@ namespace Services.Parser.Rules
             Argument.AssertIsNotNull(conflictBuilder, nameof(conflictBuilder));
 
             // No explicitly defined sides?
-            if (!textToParse.Contains('-'))
+            if (ParserHelper.ContainsNotInBrackets(textToParse, '-'))
+            {
+                this.sidesDefinedFollowUpRule.Apply(textToParse, conflictBuilder);
+            }
+            else
             {
                 this.noSidesDefinedFollowUpRule.Apply(textToParse, conflictBuilder);
-                return;
-            }
-
-            // Split, and process each side.
-            var sideStrings = textToParse
-                .Split('-')
-                .Where(s => !string.IsNullOrWhiteSpace(s))
-                .ToList();
-
-            foreach(var s in sideStrings)
-            {
-                this.sidesDefinedFollowUpRule.Apply(s, conflictBuilder.AddSide());
             }
         }
     }

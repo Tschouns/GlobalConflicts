@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Base.RuntimeChecks;
+﻿using Base.RuntimeChecks;
 using Services.Parser.Builder;
 
 namespace Services.Parser.Rules
@@ -19,23 +16,23 @@ namespace Services.Parser.Rules
             this.noSidesDefinedFollowUpRule = noSidesDefinedFollowUpRule;
         }
 
-        public void Apply(IEnumerable<string> stringsToParse, IBuildConflict conflictBuilder)
+        public void Apply(string textToParse, IBuildConflict conflictBuilder)
         {
-            Argument.AssertIsNotNull(stringsToParse, nameof(stringsToParse));
+            Argument.AssertStringIsNotEmpty(textToParse, nameof(textToParse));
             Argument.AssertIsNotNull(conflictBuilder, nameof(conflictBuilder));
 
             // No explicitly defined sides?
-            if (stringsToParse.Any(s => !s.Contains('-')))
+            if (!textToParse.Contains('-'))
             {
-                this.noSidesDefinedFollowUpRule.Apply(stringsToParse, conflictBuilder);
+                this.noSidesDefinedFollowUpRule.Apply(textToParse, conflictBuilder);
                 return;
             }
 
             // Split, and process each side.
-            var sideStrings = stringsToParse.SelectMany(s => s.Split('-')).ToList();
+            var sideStrings = textToParse.Split('-');
             foreach(var s in sideStrings)
             {
-                this.sidesDefinedFollowUpRule.Apply(new[] { s }, conflictBuilder.AddSide());
+                this.sidesDefinedFollowUpRule.Apply(s, conflictBuilder.AddSide());
             }
         }
     }

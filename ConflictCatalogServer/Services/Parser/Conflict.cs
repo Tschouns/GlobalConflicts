@@ -2,7 +2,7 @@
 
 namespace Services.Parser
 {
-    internal class Conflict
+    public class Conflict
     {
         private readonly IList<Side> sides = new List<Side>();
 

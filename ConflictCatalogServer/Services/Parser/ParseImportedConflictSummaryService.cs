@@ -10,20 +10,30 @@ namespace Services.Parser
 {
     public class ParseImportedConflictSummaryService : IParseImportedConflictSummary
     {
-        public void parseImportedConflicts(IEnumerable<ImportedConflictModel> importedConflictModels)
+        public IEnumerable<Conflict> ParseImportedConflicts(IEnumerable<ImportedConflictModel> importedConflictModels)
         {
             Argument.AssertIsNotNull(importedConflictModels, nameof(importedConflictModels));
 
             Logger.Log.Info($"Parsing {importedConflictModels.Count()} imported conflicts...");
 
             // Set up parser rules, chain-of-command-style.
-            var rule = new SidesOrNoSidesRule( );
+            var rule = new SidesOrNoSidesRule(
+                new SplitByCommaIntoActors(),
+                new SplitByCommaIntoSeparateSides(new SplitByCommaIntoActors()));
 
+            var conflicts = new List<Conflict>();
             foreach(var importedConflict in importedConflictModels)
             {
                 var builder = new ConflictBuilder();
-                rule.Apply(new[] { importedConflict.Summary }, builder);
+                rule.Apply(importedConflict.Summary , builder);
+
+                var conflict = builder.GetConflict();
+                conflict.Summary = importedConflict.Summary;
+
+                conflicts.Add(conflict);
             }
+
+            return conflicts;
         }
     }
 }

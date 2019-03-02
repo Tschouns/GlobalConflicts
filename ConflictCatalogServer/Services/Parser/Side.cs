@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace Services.Parser
 {
-    internal class Side
+    public class Side
     {
         private readonly IList<string> actors = new List<string>();
 

@@ -6,6 +6,6 @@ namespace Services.Parser
 {
     public interface IParseImportedConflictSummary
     {
-        void parseImportedConflicts(IEnumerable<ImportedConflictModel> importedConflictModels);
+        IEnumerable<Conflict> ParseImportedConflicts(IEnumerable<ImportedConflictModel> importedConflictModels);
     }
 }

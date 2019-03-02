@@ -29,7 +29,24 @@ namespace ConflictAndActorMapping
             var importedConflicts = this.importedConflictRepository.ReadAll();
             Logger.Log.Info($"{importedConflicts.Count} imported conflicts read.");
 
-            this.parser.parseImportedConflicts(importedConflicts);
+            var conflicts = this.parser.ParseImportedConflicts(importedConflicts);
+
+            foreach(var c in conflicts)
+            {
+                Logger.Log.Info("----------------------------------------------");
+                Logger.Log.Info("Summary: " + c.Summary);
+                foreach (var s in c.Sides)
+                {
+                    Logger.Log.Info("    >>>");
+
+                    foreach (var a in s.Actors)
+                    {
+                        Logger.Log.Info("    - " + a);
+                    }
+
+                    Logger.Log.Info("");
+                }
+            }
         }
     }
 }

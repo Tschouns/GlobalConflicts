@@ -12,7 +12,11 @@ namespace Services.Parser.Rules
             Argument.AssertStringIsNotEmpty(textToParse, nameof(textToParse));
             Argument.AssertIsNotNull(conflictBuilder, nameof(conflictBuilder));
 
-            var actorStrings = textToParse.Split(',').Select(s => s.Trim()).ToList();
+            var actorStrings = textToParse
+                .Split(',')
+                .Where(s => !string.IsNullOrWhiteSpace(s))
+                .ToList();
+
             foreach (var actorName in actorStrings)
             {
                 conflictBuilder.AddActor(actorName);

@@ -14,9 +14,7 @@ namespace Base.RuntimeChecks
 
         public static void AssertStringIsNotEmpty(string argument, string argumentName)
         {
-            AssertIsNotNull(argument, argumentName);
-
-            if (argument == string.Empty)
+            if (string.IsNullOrEmpty(argument))
             {
                 throw new ArgumentException("The specified string argument is empty.", argumentName);
             }

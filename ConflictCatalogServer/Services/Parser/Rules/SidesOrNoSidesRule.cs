@@ -1,5 +1,6 @@
 ﻿using Base.RuntimeChecks;
 using Services.Parser.Builder;
+using System.Linq;
 
 namespace Services.Parser.Rules
 {
@@ -29,7 +30,11 @@ namespace Services.Parser.Rules
             }
 
             // Split, and process each side.
-            var sideStrings = textToParse.Split('-');
+            var sideStrings = textToParse
+                .Split('-')
+                .Where(s => !string.IsNullOrWhiteSpace(s))
+                .ToList();
+
             foreach(var s in sideStrings)
             {
                 this.sidesDefinedFollowUpRule.Apply(s, conflictBuilder.AddSide());

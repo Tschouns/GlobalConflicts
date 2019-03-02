@@ -46,15 +46,45 @@ namespace Services.Parser.Rules
         {
             Argument.AssertIsNotNull(text, nameof(text));
 
+            var depth = 0;
+            var lowestDepth = 0;
+
+            var foundFirst = -1;
+            var foundAtDepth = 0;
+
             for (var i = 0; i < text.Length; i++)
             {
-                if (text[i] == character && !IsWithinBrackets(text, i))
+                if (text[i] == '(')
                 {
-                    return i;
+                    depth++;
+                }
+
+                if (text[i] == ')')
+                {
+                    depth--;
+                }
+
+                if (depth < lowestDepth)
+                {
+                    lowestDepth = depth;
+                }
+
+                // check for first occurence, or occurrence at a lower indent level.
+                if (text[i] == character &&
+                    (foundFirst < 0 || depth < foundAtDepth))
+                {
+                    foundFirst = i;
+                    foundAtDepth = depth;
                 }
             }
 
-            return -1;
+            // Was the character found within brackets?
+            if (foundAtDepth > lowestDepth)
+            {
+                return -1;
+            }
+
+            return foundFirst;
         }
 
         public static bool IsWithinBrackets(string text, int pos)

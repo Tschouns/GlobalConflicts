@@ -13,13 +13,20 @@ namespace Services.Parser.Rules
             Argument.AssertIsNotNull(conflictBuilder, nameof(conflictBuilder));
 
             var actorStrings = ParserHelper.SplitByCharacterNotInBrackets(textToParse, ',')
-                .Select(s => s.Trim())
+                .Select(s => s.Trim().Trim('(', ')'))
                 .Where(s => !string.IsNullOrWhiteSpace(s))
                 .ToList();
 
             foreach (var actorName in actorStrings)
             {
-                conflictBuilder.AddActor(actorName);
+                var location = actorName;
+
+                if (actorName.Contains('('))
+                {
+                    location = actorName.Substring(0, actorName.IndexOf('(')).Trim();
+                }
+
+                conflictBuilder.AddActor(actorName, location);
             }
         }
     }

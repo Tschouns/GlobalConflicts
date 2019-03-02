@@ -14,11 +14,17 @@ namespace Services.Parser.Builder
             this.sideToBuild = side;
         }
 
-        public void AddActor(string actorName)
+        public void AddActor(string fullName, string location)
         {
-            Argument.AssertStringIsNotEmpty(actorName, nameof(actorName));
+            Argument.AssertStringIsNotEmpty(fullName, nameof(fullName));
+            Argument.AssertStringIsNotEmpty(location, nameof(location));
 
-            this.sideToBuild.Actors.Add(actorName);
+            var actor = new Actor
+            {
+                FullName = fullName,
+                Location = location
+            };
+            this.sideToBuild.Actors.Add(actor);
         }
     }
 }

@@ -4,8 +4,8 @@ namespace Services.Parser
 {
     public class Side
     {
-        private readonly IList<string> actors = new List<string>();
+        private readonly IList<Actor> actors = new List<Actor>();
 
-        public IList<string> Actors => this.actors;
+        public IList<Actor> Actors => this.actors;
     }
 }

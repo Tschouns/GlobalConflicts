@@ -17,9 +17,9 @@ namespace Services.Parser
             Logger.Log.Info($"Parsing {importedConflictModels.Count()} imported conflicts...");
 
             // Set up parser rules, chain-of-command-style.
-            var rule = new SidesOrNoSidesRule(
+            var rule = new RemoveNumericBlocksAtTheEndRule(new SidesOrNoSidesRule(
                     new SplitByDashIntoSeparateSides(new SplitByCommaIntoActors()),
-                    new SplitByCommaIntoSeparateSides(new SplitByCommaIntoActors()));
+                    new SplitByCommaIntoSeparateSides(new SplitByCommaIntoActors())));
 
             var conflicts = new List<Conflict>();
             foreach(var importedConflict in importedConflictModels)

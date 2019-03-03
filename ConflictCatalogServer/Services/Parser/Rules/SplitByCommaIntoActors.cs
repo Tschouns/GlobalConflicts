@@ -12,7 +12,7 @@ namespace Services.Parser.Rules
             Argument.AssertStringIsNotEmpty(textToParse, nameof(textToParse));
             Argument.AssertIsNotNull(conflictBuilder, nameof(conflictBuilder));
 
-            var actorStrings = ParserHelper.SplitByCharacterNotInBrackets(textToParse, ',')
+            var actorStrings = ParserHelper.SplitByCharacterNotInBrackets(textToParse, ParserHelper.Comma)
                 .Select(s => s.Trim().Trim('(', ')'))
                 .Where(s => !string.IsNullOrWhiteSpace(s))
                 .ToList();

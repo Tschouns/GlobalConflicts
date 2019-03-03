@@ -5,6 +5,10 @@ namespace Services.Parser.Rules
 {
     internal static class ParserHelper
     {
+        public static char Comma => ',';
+        public static char Dash => '-';
+        public static char[] SpecialCharacters => new[] { 'G', '*', '?', ' ' };
+
         public static IEnumerable<string> SplitByCharacterNotInBrackets(string text, char character)
         {
             Argument.AssertIsNotNull(text, nameof(text));

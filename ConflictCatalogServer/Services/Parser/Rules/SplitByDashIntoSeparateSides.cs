@@ -20,7 +20,7 @@ namespace Services.Parser.Rules
             Argument.AssertStringIsNotEmpty(textToParse, nameof(textToParse));
             Argument.AssertIsNotNull(conflictBuilder, nameof(conflictBuilder));
 
-            var sideStrings = ParserHelper.SplitByCharacterNotInBrackets(textToParse, '-')
+            var sideStrings = ParserHelper.SplitByCharacterNotInBrackets(textToParse, ParserHelper.Dash)
                 .Select(s => s.Trim())
                 .Where(s => !string.IsNullOrWhiteSpace(s))
                 .ToList();

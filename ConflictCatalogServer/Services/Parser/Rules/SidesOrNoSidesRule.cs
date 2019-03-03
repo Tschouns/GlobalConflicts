@@ -22,7 +22,7 @@ namespace Services.Parser.Rules
             Argument.AssertIsNotNull(conflictBuilder, nameof(conflictBuilder));
 
             // No explicitly defined sides?
-            if (ParserHelper.ContainsNotInBrackets(textToParse, '-'))
+            if (ParserHelper.ContainsNotInBrackets(textToParse, ParserHelper.Dash))
             {
                 this.sidesDefinedFollowUpRule.Apply(textToParse, conflictBuilder);
             }

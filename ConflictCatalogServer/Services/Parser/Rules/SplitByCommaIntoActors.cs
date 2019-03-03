@@ -1,6 +1,5 @@
 ﻿using Base.RuntimeChecks;
 using Services.Parser.Builder;
-using System;
 using System.Linq;
 
 namespace Services.Parser.Rules
@@ -15,6 +14,7 @@ namespace Services.Parser.Rules
             var actorStrings = ParserHelper.SplitByCharacterNotInBrackets(textToParse, ParserHelper.Comma)
                 .Select(s => s.Trim().Trim('(', ')'))
                 .Where(s => !string.IsNullOrWhiteSpace(s))
+                .Where(s => s.Length > 1)
                 .ToList();
 
             foreach (var actorName in actorStrings)

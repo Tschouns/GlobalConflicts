@@ -128,4 +128,20 @@ VALUES (@Summary,@CommonName,@NumberOfActors,@MilFatalities,@TotalFatalities,@St
   <data name="ImportedConflictSelectAll" xml:space="preserve">
     <value>SELECT * FROM ImportedConflict;</value>
   </data>
+  <data name="NationDeleteById" xml:space="preserve">
+    <value>DELETE FROM Nation
+WHERE Id = @Id;</value>
+  </data>
+  <data name="NationInsert" xml:space="preserve">
+    <value>INSERT INTO
+Nation(UniqueName, MapXCoord, MapYCoord)
+VALUES (@UniqueName,@MapXCoord,@MapYCoord);</value>
+  </data>
+  <data name="NationSelectAll" xml:space="preserve">
+    <value>SELECT * FROM Nation;</value>
+  </data>
+  <data name="NationSelectByUniqueName" xml:space="preserve">
+    <value>SELECT * FROM Nation
+WHERE UniqueName = @UniqueName;</value>
+  </data>
 </root>

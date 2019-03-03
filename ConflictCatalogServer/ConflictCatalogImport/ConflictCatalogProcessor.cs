@@ -26,7 +26,7 @@ namespace ConflictCatalogImport
             Argument.AssertIsNotNull(arguments, nameof(arguments));
 
             Logger.Log.Info("Clearing imported conflicts...");
-            this.importedConflictRepository.ClearAll();
+            this.importedConflictRepository.DeleteAll();
             Logger.Log.Info("Cleared imported conflicts.");
 
             Logger.Log.Info($"Starting to process {arguments.FileName}...");

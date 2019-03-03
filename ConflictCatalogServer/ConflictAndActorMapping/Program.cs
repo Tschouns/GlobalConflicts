@@ -15,8 +15,10 @@ namespace ConflictAndActorMapping
 
             try
             {
+                var connectionProvider = new SingletonSqliteConnectionProvider(Config.ConnectionString);
                 var processor = new ImportedConflictProcessor(
-                    new ImportedConflictRepository(new SingletonSqliteConnectionProvider(Config.ConnectionString)),
+                    new NationRepository(connectionProvider),
+                    new ImportedConflictRepository(connectionProvider),
                     new ParseImportedConflictSummaryService());
 
                 processor.Process();

@@ -10,52 +10,62 @@ namespace ConflictAndActorMapping
 {
     public class ImportedConflictProcessor
     {
-        private readonly IReadAll<ImportedConflictModel> importedConflictRepository;
+        private readonly INationRepository nationsRepository;
+        private readonly IReadAll<ImportedConflictModel> readAllImportedConflictsRepository;
         private readonly IParseImportedConflictSummary parser;
 
         public ImportedConflictProcessor(
-            IReadAll<ImportedConflictModel> importedConflictRepository,
+            INationRepository nationsRepository,
+            IReadAll<ImportedConflictModel> readAllImportedConflictsRepository,
             IParseImportedConflictSummary parser)
         {
-            Argument.AssertIsNotNull(importedConflictRepository, nameof(importedConflictRepository));
+            Argument.AssertIsNotNull(nationsRepository, nameof(nationsRepository));
+            Argument.AssertIsNotNull(readAllImportedConflictsRepository, nameof(readAllImportedConflictsRepository));
             Argument.AssertIsNotNull(parser, nameof(parser));
 
-            this.importedConflictRepository = importedConflictRepository;
+            this.nationsRepository = nationsRepository;
+            this.readAllImportedConflictsRepository = readAllImportedConflictsRepository;
             this.parser = parser;
         }
 
         public void Process()
         {
-            Logger.Log.Info("Reading imported conflicts...");
-            var importedConflicts = this.importedConflictRepository.ReadAll();
-            Logger.Log.Info($"{importedConflicts.Count} imported conflicts read.");
+            this.CleanUpUnusedNations();
+            this.ProcessImportedConflictsAndCreateNations();
 
-            var conflicts = this.parser.ParseImportedConflicts(importedConflicts);
 
-            var actors = conflicts
-                .SelectMany(c => c.Sides)
-                .SelectMany(s => s.Actors)
-                .ToList();
+            ////Logger.Log.Info("Reading imported conflicts...");
+            ////var importedConflicts = this.readAllImportedConflictsRepository.ReadAll();
+            ////Logger.Log.Info($"{importedConflicts.Count} imported conflicts read.");
 
-            Logger.Log.Info($"All: {actors.Count}");
+            ////var conflicts = this.parser.ParseImportedConflicts(importedConflicts);
+            ////var actors = conflicts
+            ////    .SelectMany(c => c.Sides)
+            ////    .SelectMany(s => s.Actors)
+            ////    .ToList();
 
-            var uniqueActors = actors.Select(a => a.FullName).Distinct().ToList();
-            Logger.Log.Info($"Unique actors: {uniqueActors.Count}");
+            ////Logger.Log.Info($"All: {actors.Count}");
 
-            var uniqueLocations = actors
-                .Select(a => a.Location)
-                .Where(l => !int.TryParse(l, out int n))
-                .Distinct().ToList();
+            ////var uniqueActors = actors.Select(a => a.FullName).Distinct().ToList();
+            ////Logger.Log.Info($"Unique actors: {uniqueActors.Count}");
 
-            Logger.Log.Info($"Unique locations: {uniqueLocations.Count}");
-            Logger.Log.Info("");
+            ////var uniqueLocations = actors
+            ////    .Select(a => a.Location)
+            ////    .Where(l => !int.TryParse(l, out int n))
+            ////    .Distinct().ToList();
 
-            uniqueLocations.Sort();
+            ////Logger.Log.Info($"Unique locations: {uniqueLocations.Count}");
+            ////Logger.Log.Info("");
 
-            foreach (var location in uniqueLocations)
-            {
-                Logger.Log.Info(location);
-            }
+            ////uniqueLocations.Sort();
+
+            ////foreach (var location in uniqueLocations)
+            ////{
+            ////    Logger.Log.Info(location);
+            ////}
+
+
+
 
             ////foreach(var c in conflicts)
             ////{
@@ -73,6 +83,55 @@ namespace ConflictAndActorMapping
             ////        Logger.Log.Info("");
             ////    }
             ////}
+        }
+
+        private void CleanUpUnusedNations()
+        {
+            Logger.Log.Info("Cleaning up nations...");
+            var allNations = this.nationsRepository.ReadAll();
+            Logger.Log.Info($"{allNations.Count} existing nations found.");
+
+            var unusedNations = allNations
+                .Where(n => n.MapXCoord == 0 && n.MapYCoord == 0)
+                .ToList();
+            Logger.Log.Info($"{unusedNations.Count} existing nations without coordinates found.");
+
+            foreach (var nation in unusedNations)
+            {
+                this.nationsRepository.Delete(nation);
+            }
+
+            Logger.Log.Info($"{unusedNations.Count} nations deleted.");
+        }
+
+        private void ProcessImportedConflictsAndCreateNations()
+        {
+            Logger.Log.Info("Reading imported conflicts...");
+            var importedConflicts = this.readAllImportedConflictsRepository.ReadAll();
+            Logger.Log.Info($"{importedConflicts.Count} imported conflicts read.");
+
+            Logger.Log.Info("Parsing imported conflicts...");
+            var conflicts = this.parser.ParseImportedConflicts(importedConflicts);
+            var nations = conflicts
+                .SelectMany(c => c.Sides)
+                .SelectMany(s => s.Actors)
+                .Select(a => a.Location)
+                .Distinct()
+                .ToList();
+
+            Logger.Log.Info($"{nations.Count} distinct nations needed.");
+
+            Logger.Log.Info("Updating nations...");
+            var existingNations = this.nationsRepository.ReadAll();
+            var newNations = nations
+                .Where(n => !existingNations.Select(e => e.UniqueName).Contains(n))
+                .ToList();
+
+            Logger.Log.Info($"Creating {newNations.Count} new nations...");
+            foreach (var newNation in newNations)
+            {
+                this.nationsRepository.Insert(new NationModel { UniqueName = newNation });
+            }
         }
     }
 }

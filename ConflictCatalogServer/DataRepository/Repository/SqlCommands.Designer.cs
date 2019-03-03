@@ -88,5 +88,45 @@ namespace DataRepository.Repository {
                 return ResourceManager.GetString("ImportedConflictSelectAll", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DELETE FROM Nation
+        ///WHERE Id = @Id;.
+        /// </summary>
+        internal static string NationDeleteById {
+            get {
+                return ResourceManager.GetString("NationDeleteById", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to INSERT INTO
+        ///Nation(UniqueName, MapXCoord, MapYCoord)
+        ///VALUES (@UniqueName,@MapXCoord,@MapYCoord);.
+        /// </summary>
+        internal static string NationInsert {
+            get {
+                return ResourceManager.GetString("NationInsert", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SELECT * FROM Nation;.
+        /// </summary>
+        internal static string NationSelectAll {
+            get {
+                return ResourceManager.GetString("NationSelectAll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SELECT * FROM Nation
+        ///WHERE UniqueName = @UniqueName;.
+        /// </summary>
+        internal static string NationSelectByUniqueName {
+            get {
+                return ResourceManager.GetString("NationSelectByUniqueName", resourceCulture);
+            }
+        }
     }
 }

@@ -41,7 +41,7 @@ namespace DataRepository.Repository
             }
         }
 
-        public int ClearAll()
+        public int DeleteAll()
         {
             var connection = this.dbConnectionProvider.GetConnection();
             var affectedRows = connection.Execute(SqlCommands.ImportedConflictDeleteAll);

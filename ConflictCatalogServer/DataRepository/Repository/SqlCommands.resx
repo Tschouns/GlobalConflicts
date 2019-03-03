@@ -134,8 +134,8 @@ WHERE Id = @Id;</value>
   </data>
   <data name="NationInsert" xml:space="preserve">
     <value>INSERT INTO
-Nation(UniqueName, MapXCoord, MapYCoord)
-VALUES (@UniqueName,@MapXCoord,@MapYCoord);</value>
+Nation(UniqueName,NumberOfOccurrences,MapXCoord, MapYCoord)
+VALUES (@UniqueName,@NumberOfOccurrences,@MapXCoord,@MapYCoord);</value>
   </data>
   <data name="NationSelectAll" xml:space="preserve">
     <value>SELECT * FROM Nation;</value>

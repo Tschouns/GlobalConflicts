@@ -9,6 +9,7 @@ namespace DataRepository.Model
         public int? Id { get; set; }
 
         public string UniqueName { get; set; }
+        public int NumberOfOccurrences { get; set; }
         public int MapXCoord { get; set; }
         public int MapYCoord { get; set; }
     }

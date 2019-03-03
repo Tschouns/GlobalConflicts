@@ -101,8 +101,8 @@ namespace DataRepository.Repository {
         
         /// <summary>
         ///   Looks up a localized string similar to INSERT INTO
-        ///Nation(UniqueName, MapXCoord, MapYCoord)
-        ///VALUES (@UniqueName,@MapXCoord,@MapYCoord);.
+        ///Nation(UniqueName,NumberOfOccurrences,MapXCoord, MapYCoord)
+        ///VALUES (@UniqueName,@NumberOfOccurrences,@MapXCoord,@MapYCoord);.
         /// </summary>
         internal static string NationInsert {
             get {

@@ -112,25 +112,35 @@ namespace ConflictAndActorMapping
 
             Logger.Log.Info("Parsing imported conflicts...");
             var conflicts = this.parser.ParseImportedConflicts(importedConflicts);
-            var nations = conflicts
+            var allNations = conflicts
                 .SelectMany(c => c.Sides)
                 .SelectMany(s => s.Actors)
                 .Select(a => a.Location)
+                .ToList();
+
+            var distinctNations = allNations
                 .Distinct()
                 .ToList();
 
-            Logger.Log.Info($"{nations.Count} distinct nations needed.");
+            Logger.Log.Info($"{distinctNations.Count} distinct nations needed.");
 
             Logger.Log.Info("Updating nations...");
             var existingNations = this.nationsRepository.ReadAll();
-            var newNations = nations
+            var newNations = distinctNations
                 .Where(n => !existingNations.Select(e => e.UniqueName).Contains(n))
+                .Where(n => !int.TryParse(n, out int i))
+                .Select(n => new NationModel
+                    {
+                        UniqueName = n,
+                        NumberOfOccurrences = allNations.Where(m => m == n).Count(),
+                    })
+                .OrderBy(n => n.UniqueName)
                 .ToList();
 
             Logger.Log.Info($"Creating {newNations.Count} new nations...");
             foreach (var newNation in newNations)
             {
-                this.nationsRepository.Insert(new NationModel { UniqueName = newNation });
+                this.nationsRepository.Insert(newNation);
             }
         }
     }

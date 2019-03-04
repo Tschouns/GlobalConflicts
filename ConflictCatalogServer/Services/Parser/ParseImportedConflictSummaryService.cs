@@ -29,7 +29,12 @@ namespace Services.Parser
                 rule.Apply(importedConflict.Summary , builder);
 
                 var conflict = builder.GetConflict();
+
                 conflict.Summary = importedConflict.Summary;
+                conflict.CommonName = importedConflict.CommonName;
+                conflict.StartYear = int.Parse(importedConflict.StartYear);
+                conflict.EndYear = int.Parse(importedConflict.EndYear);
+                conflict.NumberOfFatalities = int.Parse(importedConflict.TotalFatalities);
 
                 conflicts.Add(conflict);
             }

@@ -1,17 +1,17 @@
 ﻿using System.Collections.Generic;
-using System.Runtime.Serialization;
 
 namespace Services.ConflictStructureModels
 {
-    [DataContract]
     public class Conflict
     {
         private readonly IList<Side> sides = new List<Side>();
-
-        [DataMember]
+        
         public string Summary { get; set; }
+        public string CommonName { get; set; }
+        public int StartYear { get; set; }
+        public int EndYear { get; set; }
+        public int NumberOfFatalities { get; set; }
 
-        [DataMember]
         public IList<Side> Sides => this.sides;
     }
 }

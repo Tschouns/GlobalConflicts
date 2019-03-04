@@ -12,21 +12,29 @@ namespace Services.Parser.Rules
             Argument.AssertIsNotNull(conflictBuilder, nameof(conflictBuilder));
 
             var actorStrings = ParserHelper.SplitByCharacterNotInBrackets(textToParse, ParserHelper.Comma)
-                .Select(s => s.Trim().Trim('(', ')'))
+                .Select(s => s.Trim())
                 .Where(s => !string.IsNullOrWhiteSpace(s))
                 .Where(s => s.Length > 1)
                 .ToList();
 
-            foreach (var actorName in actorStrings)
+            foreach (var a in actorStrings)
             {
-                var location = actorName;
+                var actor = a;
 
-                if (actorName.Contains('('))
+                // Special case: the whole thing is in brackets...
+                if (a.First() == '(' && a.Last() == ')')
                 {
-                    location = actorName.Substring(0, actorName.IndexOf('(')).Trim();
+                    actor = a.Trim('(', ')');
                 }
 
-                conflictBuilder.AddActor(actorName, location);
+                var location = actor;
+
+                if (actor.Contains('('))
+                {
+                    location = actor.Substring(0, actor.IndexOf('(')).Trim();
+                }
+
+                conflictBuilder.AddActor(actor, location);
             }
         }
     }

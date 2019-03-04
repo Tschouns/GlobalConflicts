@@ -21,8 +21,10 @@ namespace ConflictWebServer
 
         private static IRetrieveConflictJson CreateRetrieveConflictJson()
         {
+            var dbConnectionProvider = new SingletonSqliteConnectionProvider(Config.ConnectionString);
             return new RetrieveConflictJsonService(
-                new ImportedConflictRepository(new SingletonSqliteConnectionProvider(Config.ConnectionString)),
+                new ImportedConflictRepository(dbConnectionProvider),
+                new NationRepository(dbConnectionProvider),
                 new ParseImportedConflictSummaryService());
         }
     }

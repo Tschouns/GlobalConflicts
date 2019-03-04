@@ -1,6 +1,6 @@
 ﻿
 using DataRepository.Model;
-using Services.ConflictModels;
+using Services.ConflictStructureModels;
 using System.Collections.Generic;
 
 namespace Services.Parser

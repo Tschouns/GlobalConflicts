@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Runtime.Serialization;
-using System.Text;
+﻿using System.Runtime.Serialization;
 
-namespace Services.ConflictModels
+namespace Services.ConflictStructureModels
 {
     [DataContract]
     public class Actor

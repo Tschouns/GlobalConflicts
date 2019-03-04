@@ -1,7 +1,7 @@
 ﻿using Base.RuntimeChecks;
 using DataRepository.Model;
 using DataRepository.Repository;
-using Services.ConflictModels;
+using Services.ConflictStructureModels;
 using Services.Parser;
 using System;
 using System.Collections.Generic;

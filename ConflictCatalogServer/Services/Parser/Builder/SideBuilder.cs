@@ -1,5 +1,5 @@
 ﻿using Base.RuntimeChecks;
-using Services.ConflictModels;
+using Services.ConflictStructureModels;
 
 namespace Services.Parser.Builder
 {

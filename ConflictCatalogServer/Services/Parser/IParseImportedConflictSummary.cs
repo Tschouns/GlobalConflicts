@@ -1,5 +1,6 @@
 ﻿
 using DataRepository.Model;
+using Services.ConflictModels;
 using System.Collections.Generic;
 
 namespace Services.Parser

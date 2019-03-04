@@ -1,7 +1,7 @@
 ﻿using Base.RuntimeChecks;
 using DataRepository.Model;
 using Logging;
-using Services.ConflictStructureModels;
+using Services.ConflictStructure;
 using Services.Parser.Builder;
 using Services.Parser.Rules;
 using System.Collections.Generic;
@@ -11,7 +11,7 @@ namespace Services.Parser
 {
     public class ParseImportedConflictSummaryService : IParseImportedConflictSummary
     {
-        public IEnumerable<Conflict> ParseImportedConflicts(IEnumerable<ImportedConflictModel> importedConflictModels)
+        public IEnumerable<ConflictData> ParseImportedConflicts(IEnumerable<ImportedConflictModel> importedConflictModels)
         {
             Argument.AssertIsNotNull(importedConflictModels, nameof(importedConflictModels));
 
@@ -22,7 +22,7 @@ namespace Services.Parser
                     new SplitByDashIntoSeparateSides(new SplitByCommaIntoActors()),
                     new SplitByCommaIntoSeparateSides(new SplitByCommaIntoActors())));
 
-            var conflicts = new List<Conflict>();
+            var conflicts = new List<ConflictData>();
             foreach(var importedConflict in importedConflictModels)
             {
                 var builder = new ConflictBuilder();

@@ -1,13 +1,13 @@
 ﻿using Base.RuntimeChecks;
-using Services.ConflictStructureModels;
+using Services.ConflictStructure;
 
 namespace Services.Parser.Builder
 {
     internal class SideBuilder : IBuildSide
     {
-        private readonly Side sideToBuild;
+        private readonly SideData sideToBuild;
 
-        public SideBuilder(Side side)
+        public SideBuilder(SideData side)
         {
             this.sideToBuild = side;
         }
@@ -17,7 +17,7 @@ namespace Services.Parser.Builder
             Argument.AssertStringIsNotEmpty(fullName, nameof(fullName));
             Argument.AssertStringIsNotEmpty(location, nameof(location));
 
-            var actor = new Actor
+            var actor = new ActorData
             {
                 FullName = fullName,
                 Location = location

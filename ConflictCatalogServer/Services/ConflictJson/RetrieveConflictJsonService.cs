@@ -1,7 +1,7 @@
 ﻿using Base.RuntimeChecks;
 using DataRepository.Model;
 using DataRepository.Repository;
-using Services.ConflictStructureModels;
+using Services.ConflictStructure;
 using Services.Parser;
 using System;
 using System.Collections.Generic;
@@ -33,7 +33,7 @@ namespace Services.ConflictJson
             var importedConflicts = this.importedConflictRepository.ReadAll();
             var conflicts = this.parseImportedConflictSummaryService.ParseImportedConflicts(importedConflicts).ToList();
 
-            var serializer = new DataContractJsonSerializer(typeof(List<Conflict>));
+            var serializer = new DataContractJsonSerializer(typeof(List<ConflictData>));
             var memoryStream = new MemoryStream();
             serializer.WriteObject(memoryStream, conflicts);
 

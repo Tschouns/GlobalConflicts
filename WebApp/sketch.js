@@ -1,26 +1,27 @@
-
+let slider;
+let yearDiv;
 let sketchCanvas;
-let statusDiv;
 
 // Sketch variables.
 let conflicts;
 let state;
 
+// p5 setup - draw
 function setup()
 {
     try
     {
-        // Get div handles.
-        statusDiv = document.getElementById('status');
-        outputDiv = document.getElementById('output');
+        // Get element handles.
+        slider = document.getElementById('slider');
+        yearDiv = document.getElementById('yearDiv');
 
         // Create canvas.
-        let parentDiv = document.getElementById('conflicts');
+        let parentDiv = document.getElementById('conflictsDiv');
         let width = parentDiv.offsetWidth;
         let height = parentDiv.offsetHeight;
 
         sketchCanvas = createCanvas(width, height);
-        sketchCanvas.parent("conflicts");
+        sketchCanvas.parent("conflictsDiv");
 
         initializeSketch();
     }
@@ -43,19 +44,21 @@ function draw()
     }
 }
 
+// Sketch functions
+
 function initializeSketch()
 {
     conflicts = createConflictArray(conflictData);
     // Initialize state variables.
     state =
     {
-        year: 1400,
+        year: 1400.00,
     };
 }
 
 function updateSketch()
 {
-    state.year++;
+    //state.year++;
 }
 
 function drawSketch()
@@ -66,6 +69,8 @@ function drawSketch()
         conflict.renderToCanvas(state.year);
     });
 }
+
+// Helper functions
 
 function createConflictArray(conflictData)
 {
@@ -78,7 +83,9 @@ function createConflictArray(conflictData)
     return conflictArray;
 }
 
-function setStatus(text)
+// Event handlers
+function onSliderValueChanged()
 {
-    statusDiv.value = text;
+    state.year = slider.value;
+    yearDiv.innerHTML = state.year;
 }

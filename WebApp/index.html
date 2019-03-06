@@ -8,26 +8,26 @@
         <link rel="stylesheet" type="text/css" href="layout.css">
     </head>
     <body>
-        <div id="worldmap">
-            <div id="conflicts">
+        <div id="worldmapDiv">
+            <div id="conflictsDiv">
                 <!--Here is where the canvas goes.-->
             </div>
-            <div id="details">
+            <div id="detailsDiv">
                 <p>DivDetails tralalalalala</p>
             </div>
         </div>
-        <div id="control">
-            <div id="playbutton">
+        <div id="controlDiv">
+            <div id="buttonDiv">
                 <button>ButtonText</button>
             </div>
-            <div id="slider">
-                <input type="range" min="1400" max="2015" value="1400" />
+            <div id="sliderDiv">
+                <input id="slider"  type="range" min="1400" max="2015" value="1400" oninput="onSliderValueChanged()"/>
             </div>
-            <div id="year">
+            <div id="yearDiv">
                 2000
             </div>
         </div>
-        <div id="foot">
+        <div id="footDiv">
             <input id="status" type="text" />
         </div>
     </body>

@@ -2,17 +2,19 @@ class Conflict
 {
     constructor(conflictData)
     {
-        this.data = conflictData;
-    }
+        // private member variables
+        let data = conflictData;
 
-    renderToCanvas(year)
-    {
-        if (year < this.data.StartYear ||
-            year > this.data.EndYear)
+        // public methods
+        this.renderToCanvas = function(year)
         {
-            return;
+            if (year < data.StartYear ||
+                year > data.EndYear)
+            {
+                return;
+            }
+    
+            ellipse(data.PosX, data.PosY, 80, 80);
         }
-
-        ellipse(this.data.PosX, this.data.PosY, 80, 80);
     }
 }

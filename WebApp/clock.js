@@ -10,7 +10,9 @@ class Clock
         // public methods
         this.update = function()
         {
-            let time = millis();
+            timePassed = timeRunning - timeRunningBefore;
+            timeRunningBefore = timeRunning;
+            timeRunning = millis();
         };
 
         this.getTimePassed = function()

@@ -4,9 +4,11 @@ let sketchCanvas;
 
 // Sketch variables.
 let conflicts;
+let clock;
 let state;
 
-// p5 setup - draw
+// p5 setup and draw
+
 function setup()
 {
     try
@@ -49,16 +51,20 @@ function draw()
 function initializeSketch()
 {
     conflicts = createConflictArray(conflictData);
+    clock = new Clock();
+
     // Initialize state variables.
     state =
     {
-        year: 1400.00,
+        speed: 0,
+        year: 1400,
     };
 }
 
 function updateSketch()
 {
-    //state.year++;
+    clock.update();
+    updateYearSlider();
 }
 
 function drawSketch()
@@ -68,6 +74,8 @@ function drawSketch()
     {
         conflict.renderToCanvas(state.year);
     });
+
+    yearDiv.innerHTML = state.year;
 }
 
 // Helper functions
@@ -83,9 +91,34 @@ function createConflictArray(conflictData)
     return conflictArray;
 }
 
+function updateYearSlider()
+{
+    state.year = state.year + state.speed * clock.getTimePassed() / 1000; // ...because milliseconds.
+}
+
 // Event handlers
+
 function onSliderValueChanged()
 {
-    state.year = slider.value;
-    yearDiv.innerHTML = state.year;
+    state.year = Number(slider.value);
+}
+
+function onPauseButtonClick()
+{
+    state.speed = 0;
+}
+
+function onPlayButtonClick()
+{
+    state.speed = 0.2;
+}
+
+function onFastForwardButtonClick()
+{
+    state.speed = 1;
+}
+
+function onVeryFastForwardButtonClick()
+{
+    state.speed = 5;
 }

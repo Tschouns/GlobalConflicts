@@ -63290,4 +63290,5 @@ let conflictData =
         "StartYear": 2000,
         "Summary": "Israel-Palestine, 2000"
     }
-];
+]
+;

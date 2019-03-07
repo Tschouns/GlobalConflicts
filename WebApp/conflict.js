@@ -4,7 +4,7 @@ class Conflict
     {
         // private member variables
         let data = conflictData;
-        let maxDiameter = maxCircleDiameter(data.NumberOfFatalities);
+        let maxTotalDiameter = maxCircleDiameter(data.NumberOfFatalities);
         let strokeColor = color(200, 100, 100);
         let fillColor = color(250, 150, 150);
 
@@ -34,7 +34,7 @@ class Conflict
         function drawCircle(year)
         {
             let progressFactor = (year - data.StartYear) / (data.EndYear - data.StartYear);
-            let diameter = maxDiameter * progressFactor;
+            let diameter = maxTotalDiameter * progressFactor;
 
             strokeWeight(5);
             stroke(strokeColor);

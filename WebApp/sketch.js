@@ -94,6 +94,10 @@ function createConflictArray(conflictData)
 function updateYearSlider()
 {
     state.year = state.year + state.speed * clock.getTimePassed() / 1000; // ...because milliseconds.
+    if (state.year > 2000)
+    {
+        state.year = 2000;
+    }
 }
 
 // Event handlers

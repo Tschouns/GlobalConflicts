@@ -55441,7 +55441,7 @@ let conflictData =
                 "PosY": 394
             }
         ],
-        "CommonName": "",
+        "CommonName": "Second World War",
         "EndYear": 1945,
         "NumberOfFatalities": 40409000,
         "PosX": 1568,

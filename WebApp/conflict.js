@@ -5,8 +5,14 @@ class Conflict
         // private member variables
         let data = conflictData;
         let maxTotalDiameter = maxCircleDiameter(data.NumberOfFatalities);
+        let maxMilDiameter = maxCircleDiameter(data.NumberOfMilitaryFatalities);
         let strokeColor = color(200, 100, 100);
         let fillColor = color(250, 150, 150);
+
+        if (maxTotalDiameter < 50)
+        {
+            maxTotalDiameter = 50;
+        }
 
         // public methods
         this.renderToCanvas = function(year)
@@ -34,13 +40,20 @@ class Conflict
         function drawCircle(year)
         {
             let progressFactor = (year - data.StartYear) / (data.EndYear - data.StartYear);
-            let diameter = maxTotalDiameter * progressFactor;
-
+            let totalDiameter = maxTotalDiameter * progressFactor;
+            let milDiameter = maxMilDiameter * progressFactor;
+            
+            // main circle
             strokeWeight(5);
             stroke(strokeColor);
             fill(fillColor);
 
-            ellipse(data.PosX, data.PosY, diameter, diameter);
+            ellipse(data.PosX, data.PosY, totalDiameter, totalDiameter);
+
+            // inner circle (for military fatalities)
+            noStroke();
+            fill(strokeColor);
+            ellipse(data.PosX, data.PosY, milDiameter, milDiameter);
         }
 
         function drawActorLine(pos1X, pos1Y, pos2X, pos2Y)
@@ -66,12 +79,11 @@ class Conflict
 
         function maxCircleDiameter(numberOfFatalities)
         {
-            let min = 50;
             let scale = 0.2;
 
             let diameter = Math.sqrt(numberOfFatalities / Math.PI) * 2 * scale;
 
-            return diameter > min ? diameter : min;
+            return diameter;
         }
     }
 }

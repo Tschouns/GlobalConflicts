@@ -17,11 +17,15 @@ class Conflict
         let strokeColor = colorGen.getHardColor();
         let fillColor = colorGen.getSoftColor();
 
+        let currentDiameter = 0;
+        let isActive = false;
+
         // public methods
         this.renderToCanvas = function(year)
         {
-            if (year < data.StartYear ||
-                year > data.EndYear)
+            isActive = checkIsActive(year);
+
+            if (!isActive)
             {
                 return;
             }
@@ -40,23 +44,34 @@ class Conflict
         }
 
         // private helper methods
+        function checkIsActive(year)
+        {
+            if (year < data.StartYear ||
+                year > data.EndYear)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
         function drawCircle(year)
         {
             let progressFactor = (year - data.StartYear) / (data.EndYear - data.StartYear);
-            let totalDiameter = maxTotalDiameter * progressFactor;
-            let milDiameter = maxMilDiameter * progressFactor;
+            
+            currentDiameter = maxTotalDiameter * progressFactor;
             
             // main circle
             strokeWeight(5);
             stroke(strokeColor);
             fill(fillColor);
 
-            ellipse(data.PosX, data.PosY, totalDiameter, totalDiameter);
+            ellipse(data.PosX, data.PosY, currentDiameter, currentDiameter);
 
             // inner circle (for military fatalities)
             noStroke();
             fill(strokeColor);
-            ellipse(data.PosX, data.PosY, milDiameter, milDiameter);
+            ellipse(data.PosX, data.PosY, maxMilDiameter * progressFactor, maxMilDiameter * progressFactor);
         }
 
         function drawActorLine(pos1X, pos1Y, pos2X, pos2Y)

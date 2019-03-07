@@ -3,19 +3,24 @@ body
     font-family: "Verdana", Verdana, Tahoma, sans-serif;
 }
 
+#masterDiv
+{
+    position: relative;
+    width: 2700px;
+
+    border-style: solid;
+    border-color: darkslategray;
+    border-width: 15px;
+    border-radius: 12px;
+}
+
 #worldmapDiv
 {
     position: relative;
     width: 2700px;
     height: 1350px;
 
-
-    border-style: solid;
-    border-color: brown;
-    border-width: 5px;
-
     background-image: url("../images/worldmap.jpg");
-    background-color: burlywood;
 }
 
 #conflictsDiv
@@ -37,10 +42,11 @@ body
     height: 400px;
 
     border-style: solid;
-    border-color: brown;
-    border-width: 5px;
+    border-color: darkslategray;
+    border-width: 10px;
+    border-radius: 12px;
     
-    background-color: burlywood;
+    background-color: lightblue;
 }
 
 #controlDiv
@@ -49,12 +55,11 @@ body
     width: 2700px;
     height:100px;
 
-    border-style: solid;
-    border-color: brown;
-    border-width: 5px;
-    border-top-width: 0px;
+    border-top-style: solid;
+    border-top-color: darkslategray;
+    border-top-width: 10px;
 
-    background-color: burlywood;
+    background-color: darkslategray;
 }
 
 #buttonDiv
@@ -80,7 +85,10 @@ body
     width: 200px;
     height: 100%;
 
+    text-align: center;
+    vertical-align: middle;
     font-size: 50px;
+    color: white;
 }
 
 /* Buttons */
@@ -92,20 +100,19 @@ body
 
     width: 90px;
     height: 90px;
+
+    background-color:brown;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    text-align: center;
+    display: inline-block;
+
+    font-size: 30px;
+    font-weight: bold;
 }
 
-#pauseButton
+#buttonDiv button.active
 {
-}
-
-#playButton
-{
-}
-
-#fastForewardButton
-{
-}
-
-#veryFastForewardButton
-{
+    background-color:lightcoral;
 }

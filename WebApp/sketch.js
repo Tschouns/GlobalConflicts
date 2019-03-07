@@ -1,3 +1,4 @@
+let buttons;
 let slider;
 let yearDiv;
 let sketchCanvas;
@@ -14,6 +15,13 @@ function setup()
     try
     {
         // Get element handles.
+        buttons = 
+        {
+            pause: document.getElementById("pauseButton"),
+            play: document.getElementById("playButton"),
+            fastForward: document.getElementById("fastForwardButton"),
+            veryFastForward: document.getElementById("veryFastForwardButton"),
+        };
         slider = document.getElementById('slider');
         yearDiv = document.getElementById('yearDiv');
 
@@ -110,19 +118,39 @@ function onSliderValueChanged()
 function onPauseButtonClick()
 {
     state.speed = 0;
+
+    buttons.pause.className = "active";
+    buttons.play.className = "";
+    buttons.fastForward.className = "";
+    buttons.veryFastForward.className = "";
 }
 
 function onPlayButtonClick()
 {
     state.speed = 0.2;
+
+    buttons.pause.className = "";
+    buttons.play.className = "active";
+    buttons.fastForward.className = "";
+    buttons.veryFastForward.className = "";
 }
 
 function onFastForwardButtonClick()
 {
     state.speed = 1;
+
+    buttons.pause.className = "";
+    buttons.play.className = "";
+    buttons.fastForward.className = "active";
+    buttons.veryFastForward.className = "";
 }
 
 function onVeryFastForwardButtonClick()
 {
     state.speed = 5;
+
+    buttons.pause.className = "";
+    buttons.play.className = "";
+    buttons.fastForward.className = "";
+    buttons.veryFastForward.className = "active";
 }

@@ -6006,6 +6006,23 @@ let conflictData =
     {
         "Actors": [
             {
+                "Name": "Bohemia (Hussites, with intervention by Germany and others)",
+                "PosX": 1450,
+                "PosY": 300
+            }
+        ],
+        "CommonName": "Hussite Wars",
+        "EndYear": 1434,
+        "NumberOfFatalities": 23400,
+        "NumberOfMilitaryFatalities": 0,
+        "PosX": 1450,
+        "PosY": 300,
+        "StartYear": 1419,
+        "Summary": "Bohemia (Hussites, with intervention by Germany and others), 1419-34"
+    },
+    {
+        "Actors": [
+            {
                 "Name": "Prussia",
                 "PosX": 1434,
                 "PosY": 281
@@ -6980,14 +6997,19 @@ let conflictData =
                 "Name": "Hungary",
                 "PosX": 1514,
                 "PosY": 330
+            },
+            {
+                "Name": "Bohemia",
+                "PosX": 1450,
+                "PosY": 300
             }
         ],
         "CommonName": "",
         "EndYear": 1478,
         "NumberOfFatalities": 18000,
         "NumberOfMilitaryFatalities": 0,
-        "PosX": 1514,
-        "PosY": 330,
+        "PosX": 1482,
+        "PosY": 315,
         "StartYear": 1470,
         "Summary": "Hungary-Bohemia, 1470-78"
     },
@@ -8799,6 +8821,11 @@ let conflictData =
     {
         "Actors": [
             {
+                "Name": "Indians (Moplahs)",
+                "PosX": 500,
+                "PosY": 350
+            },
+            {
                 "Name": "Britain",
                 "PosX": 1335,
                 "PosY": 280
@@ -8808,8 +8835,8 @@ let conflictData =
         "EndYear": 1922,
         "NumberOfFatalities": 11000,
         "NumberOfMilitaryFatalities": 0,
-        "PosX": 1335,
-        "PosY": 280,
+        "PosX": 917,
+        "PosY": 315,
         "StartYear": 1921,
         "Summary": "Indians (Moplahs)-Britain, 1921-22"
     },
@@ -10066,6 +10093,23 @@ let conflictData =
     {
         "Actors": [
             {
+                "Name": "Bohemia",
+                "PosX": 1450,
+                "PosY": 300
+            }
+        ],
+        "CommonName": "Schmalkaldic War",
+        "EndYear": 1547,
+        "NumberOfFatalities": 8000,
+        "NumberOfMilitaryFatalities": 0,
+        "PosX": 1450,
+        "PosY": 300,
+        "StartYear": 1546,
+        "Summary": "Emperor, German allies, pope-Protestant German states, Bohemia, 1546-47"
+    },
+    {
+        "Actors": [
+            {
                 "Name": "France (Huguenots)",
                 "PosX": 1365,
                 "PosY": 325
@@ -11135,6 +11179,11 @@ let conflictData =
                 "PosY": 384
             },
             {
+                "Name": "Bohemia",
+                "PosX": 1450,
+                "PosY": 300
+            },
+            {
                 "Name": "Hungary",
                 "PosX": 1514,
                 "PosY": 330
@@ -11144,8 +11193,8 @@ let conflictData =
         "EndYear": 1495,
         "NumberOfFatalities": 6000,
         "NumberOfMilitaryFatalities": 0,
-        "PosX": 1543,
-        "PosY": 357,
+        "PosX": 1512,
+        "PosY": 338,
         "StartYear": 1490,
         "Summary": "Turkey-Bohemia, Hungary, emperor, 1490-95"
     },
@@ -12473,14 +12522,19 @@ let conflictData =
                 "Name": "Muscovy",
                 "PosX": 1303,
                 "PosY": 444
+            },
+            {
+                "Name": "Kazan Tartars",
+                "PosX": 1780,
+                "PosY": 247
             }
         ],
         "CommonName": "",
         "EndYear": 1469,
         "NumberOfFatalities": 4500,
         "NumberOfMilitaryFatalities": 0,
-        "PosX": 1303,
-        "PosY": 444,
+        "PosX": 1541,
+        "PosY": 345,
         "StartYear": 1467,
         "Summary": "Muscovy-Kazan Tartars, 1467-69"
     },
@@ -12666,6 +12720,11 @@ let conflictData =
                 "PosY": 330
             },
             {
+                "Name": "Bohemia",
+                "PosX": 1450,
+                "PosY": 300
+            },
+            {
                 "Name": "Poland-Lithuania",
                 "PosX": 1493,
                 "PosY": 281
@@ -12675,8 +12734,8 @@ let conflictData =
         "EndYear": 1469,
         "NumberOfFatalities": 4000,
         "NumberOfMilitaryFatalities": 0,
-        "PosX": 1503,
-        "PosY": 305,
+        "PosX": 1485,
+        "PosY": 303,
         "StartYear": 1468,
         "Summary": "Hungary-Bohemia, emperor, (Poland-Lithuania), 1468-69"
     },
@@ -12752,14 +12811,19 @@ let conflictData =
                 "Name": "Muscovy",
                 "PosX": 1303,
                 "PosY": 444
+            },
+            {
+                "Name": "Kazan Tartars",
+                "PosX": 1780,
+                "PosY": 247
             }
         ],
         "CommonName": "",
         "EndYear": 1552,
         "NumberOfFatalities": 4000,
         "NumberOfMilitaryFatalities": 0,
-        "PosX": 1303,
-        "PosY": 444,
+        "PosX": 1541,
+        "PosY": 345,
         "StartYear": 1550,
         "Summary": "Muscovy-Kazan Tartars, 1550-52"
     },
@@ -14814,14 +14878,19 @@ let conflictData =
                 "Name": "Muscovy",
                 "PosX": 1303,
                 "PosY": 444
+            },
+            {
+                "Name": "Kazan Tartars",
+                "PosX": 1780,
+                "PosY": 247
             }
         ],
         "CommonName": "",
         "EndYear": 1507,
         "NumberOfFatalities": 2400,
         "NumberOfMilitaryFatalities": 0,
-        "PosX": 1303,
-        "PosY": 444,
+        "PosX": 1541,
+        "PosY": 345,
         "StartYear": 1506,
         "Summary": "Muscovy-Kazan Tartars, 1506-07"
     },
@@ -15219,6 +15288,23 @@ let conflictData =
         "PosY": 394,
         "StartYear": 1461,
         "Summary": "China (Sichuan), 1461"
+    },
+    {
+        "Actors": [
+            {
+                "Name": "Bohemia",
+                "PosX": 1450,
+                "PosY": 300
+            }
+        ],
+        "CommonName": "War of Podiebrad",
+        "EndYear": 1462,
+        "NumberOfFatalities": 2000,
+        "NumberOfMilitaryFatalities": 0,
+        "PosX": 1450,
+        "PosY": 300,
+        "StartYear": 1462,
+        "Summary": "Emperor-Bohemia, 1462"
     },
     {
         "Actors": [
@@ -16982,14 +17068,19 @@ let conflictData =
                 "Name": "Argentina",
                 "PosX": 576,
                 "PosY": 345
+            },
+            {
+                "Name": "Indians (Patagonians)",
+                "PosX": 500,
+                "PosY": 350
             }
         ],
         "CommonName": "",
         "EndYear": 1883,
         "NumberOfFatalities": 1500,
         "NumberOfMilitaryFatalities": 0,
-        "PosX": 576,
-        "PosY": 345,
+        "PosX": 538,
+        "PosY": 347,
         "StartYear": 1878,
         "Summary": "Argentina-Indians (Patagonians), 1878-83"
     },
@@ -17637,14 +17728,19 @@ let conflictData =
                 "Name": "Muscovy",
                 "PosX": 1303,
                 "PosY": 444
+            },
+            {
+                "Name": "Kazan Tartars",
+                "PosX": 1780,
+                "PosY": 247
             }
         ],
         "CommonName": "",
         "EndYear": 1531,
         "NumberOfFatalities": 1200,
         "NumberOfMilitaryFatalities": 0,
-        "PosX": 1303,
-        "PosY": 444,
+        "PosX": 1541,
+        "PosY": 345,
         "StartYear": 1530,
         "Summary": "Muscovy-Kazan Tartars, 1530-31"
     },
@@ -18870,14 +18966,19 @@ let conflictData =
                 "Name": "Argentina",
                 "PosX": 576,
                 "PosY": 345
+            },
+            {
+                "Name": "Indians",
+                "PosX": 500,
+                "PosY": 350
             }
         ],
         "CommonName": "",
         "EndYear": 1834,
         "NumberOfFatalities": 1000,
         "NumberOfMilitaryFatalities": 0,
-        "PosX": 576,
-        "PosY": 345,
+        "PosX": 538,
+        "PosY": 347,
         "StartYear": 1833,
         "Summary": "Argentina-Indians, 1833-34"
     },
@@ -20858,14 +20959,19 @@ let conflictData =
                 "Name": "Muscovy",
                 "PosX": 1303,
                 "PosY": 444
+            },
+            {
+                "Name": "Kazan Tartars",
+                "PosX": 1780,
+                "PosY": 247
             }
         ],
         "CommonName": "",
         "EndYear": 1478,
         "NumberOfFatalities": 800,
         "NumberOfMilitaryFatalities": 0,
-        "PosX": 1303,
-        "PosY": 444,
+        "PosX": 1541,
+        "PosY": 345,
         "StartYear": 1478,
         "Summary": "Muscovy-Kazan Tartars, 1478"
     },
@@ -20875,14 +20981,19 @@ let conflictData =
                 "Name": "Muscovy",
                 "PosX": 1303,
                 "PosY": 444
+            },
+            {
+                "Name": "Kazan Tartars",
+                "PosX": 1780,
+                "PosY": 247
             }
         ],
         "CommonName": "",
         "EndYear": 1480,
         "NumberOfFatalities": 800,
         "NumberOfMilitaryFatalities": 0,
-        "PosX": 1303,
-        "PosY": 444,
+        "PosX": 1541,
+        "PosY": 345,
         "StartYear": 1480,
         "Summary": "Muscovy-Kazan Tartars, 1480"
     },
@@ -20926,14 +21037,19 @@ let conflictData =
                 "Name": "Muscovy",
                 "PosX": 1303,
                 "PosY": 444
+            },
+            {
+                "Name": "Kazan Tartars",
+                "PosX": 1780,
+                "PosY": 247
             }
         ],
         "CommonName": "",
         "EndYear": 1497,
         "NumberOfFatalities": 800,
         "NumberOfMilitaryFatalities": 0,
-        "PosX": 1303,
-        "PosY": 444,
+        "PosX": 1541,
+        "PosY": 345,
         "StartYear": 1496,
         "Summary": "Muscovy-Kazan Tartars, 1496-97"
     },
@@ -22957,14 +23073,19 @@ let conflictData =
                 "Name": "Spain",
                 "PosX": 1317,
                 "PosY": 375
+            },
+            {
+                "Name": "Indians (northwest Colombia)",
+                "PosX": 500,
+                "PosY": 350
             }
         ],
         "CommonName": "",
         "EndYear": 1514,
         "NumberOfFatalities": 150,
         "NumberOfMilitaryFatalities": 150,
-        "PosX": 1317,
-        "PosY": 375,
+        "PosX": 908,
+        "PosY": 362,
         "StartYear": 1514,
         "Summary": "Spain-Indians (northwest Colombia), 1514"
     },
@@ -23654,14 +23775,19 @@ let conflictData =
                 "Name": "Spain",
                 "PosX": 1317,
                 "PosY": 375
+            },
+            {
+                "Name": "Indians (Venezuela)",
+                "PosX": 500,
+                "PosY": 350
             }
         ],
         "CommonName": "",
         "EndYear": 1502,
         "NumberOfFatalities": 79,
         "NumberOfMilitaryFatalities": 1,
-        "PosX": 1317,
-        "PosY": 375,
+        "PosX": 908,
+        "PosY": 362,
         "StartYear": 1502,
         "Summary": "Spain-Indians (Venezuela), 1502"
     },
@@ -23732,14 +23858,19 @@ let conflictData =
                 "Name": "Spain",
                 "PosX": 1317,
                 "PosY": 375
+            },
+            {
+                "Name": "Indians (Turbaco, Columbia)",
+                "PosX": 500,
+                "PosY": 350
             }
         ],
         "CommonName": "",
         "EndYear": 1509,
         "NumberOfFatalities": 70,
         "NumberOfMilitaryFatalities": 0,
-        "PosX": 1317,
-        "PosY": 375,
+        "PosX": 908,
+        "PosY": 362,
         "StartYear": 1509,
         "Summary": "Spain-Indians (Turbaco, Columbia), 1509"
     },
@@ -26315,6 +26446,23 @@ let conflictData =
     {
         "Actors": [
             {
+                "Name": "Bohemia",
+                "PosX": 1450,
+                "PosY": 300
+            }
+        ],
+        "CommonName": "Bohemian Civil War",
+        "EndYear": 1424,
+        "NumberOfFatalities": 0,
+        "NumberOfMilitaryFatalities": 0,
+        "PosX": 1450,
+        "PosY": 300,
+        "StartYear": 1423,
+        "Summary": "Bohemia, 1423-24"
+    },
+    {
+        "Actors": [
+            {
                 "Name": "Egypt",
                 "PosX": 1574,
                 "PosY": 477
@@ -27122,6 +27270,23 @@ let conflictData =
     {
         "Actors": [
             {
+                "Name": "Bohemia (succession)",
+                "PosX": 1450,
+                "PosY": 300
+            }
+        ],
+        "CommonName": "",
+        "EndYear": 1439,
+        "NumberOfFatalities": 0,
+        "NumberOfMilitaryFatalities": 0,
+        "PosX": 1450,
+        "PosY": 300,
+        "StartYear": 1438,
+        "Summary": "Bohemia (succession), 1438-39"
+    },
+    {
+        "Actors": [
+            {
                 "Name": "China (Yunnan)",
                 "PosX": 2109,
                 "PosY": 394
@@ -27707,6 +27872,23 @@ let conflictData =
         "PosY": 371,
         "StartYear": 1447,
         "Summary": "Muscovy-Tartars, 1447"
+    },
+    {
+        "Actors": [
+            {
+                "Name": "Bohemia (religious)",
+                "PosX": 1450,
+                "PosY": 300
+            }
+        ],
+        "CommonName": "",
+        "EndYear": 1451,
+        "NumberOfFatalities": 0,
+        "NumberOfMilitaryFatalities": 0,
+        "PosX": 1450,
+        "PosY": 300,
+        "StartYear": 1448,
+        "Summary": "Bohemia (religious), 1448-51"
     },
     {
         "Actors": [
@@ -28554,6 +28736,23 @@ let conflictData =
     {
         "Actors": [
             {
+                "Name": "Bohemia",
+                "PosX": 1450,
+                "PosY": 300
+            }
+        ],
+        "CommonName": "",
+        "EndYear": 1460,
+        "NumberOfFatalities": 0,
+        "NumberOfMilitaryFatalities": 0,
+        "PosX": 1450,
+        "PosY": 300,
+        "StartYear": 1458,
+        "Summary": "Bohemia-Moravia, Silesia, Lausits?, 1458-60"
+    },
+    {
+        "Actors": [
+            {
                 "Name": "Germany",
                 "PosX": 1431,
                 "PosY": 290
@@ -29244,6 +29443,23 @@ let conflictData =
     {
         "Actors": [
             {
+                "Name": "Bohemia (religion, with intervention by Hungary)",
+                "PosX": 1450,
+                "PosY": 300
+            }
+        ],
+        "CommonName": "",
+        "EndYear": 1467,
+        "NumberOfFatalities": 0,
+        "NumberOfMilitaryFatalities": 0,
+        "PosX": 1450,
+        "PosY": 300,
+        "StartYear": 1465,
+        "Summary": "Bohemia (religion, with intervention by Hungary), 1465-67"
+    },
+    {
+        "Actors": [
+            {
                 "Name": "Brandenburg",
                 "PosX": 1409,
                 "PosY": 292
@@ -29828,6 +30044,11 @@ let conflictData =
     {
         "Actors": [
             {
+                "Name": "Kazan Tartars",
+                "PosX": 1780,
+                "PosY": 247
+            },
+            {
                 "Name": "Muscovy",
                 "PosX": 1303,
                 "PosY": 444
@@ -29837,8 +30058,8 @@ let conflictData =
         "EndYear": 1472,
         "NumberOfFatalities": 0,
         "NumberOfMilitaryFatalities": 0,
-        "PosX": 1303,
-        "PosY": 444,
+        "PosX": 1541,
+        "PosY": 345,
         "StartYear": 1472,
         "Summary": "Kazan Tartars-Muscovy, 1472"
     },
@@ -30386,6 +30607,11 @@ let conflictData =
     {
         "Actors": [
             {
+                "Name": "Kazan Tartars",
+                "PosX": 1780,
+                "PosY": 247
+            },
+            {
                 "Name": "Crimean Tartars",
                 "PosX": 1605,
                 "PosY": 327
@@ -30395,8 +30621,8 @@ let conflictData =
         "EndYear": 1479,
         "NumberOfFatalities": 0,
         "NumberOfMilitaryFatalities": 0,
-        "PosX": 1605,
-        "PosY": 327,
+        "PosX": 1692,
+        "PosY": 287,
         "StartYear": 1478,
         "Summary": "Kazan Tartars-Crimean Tartars, 1478-79"
     },
@@ -30667,6 +30893,23 @@ let conflictData =
         "PosY": 384,
         "StartYear": 1481,
         "Summary": "Turkey (succession), 1481-82"
+    },
+    {
+        "Actors": [
+            {
+                "Name": "Kazan Tartars",
+                "PosX": 1780,
+                "PosY": 247
+            }
+        ],
+        "CommonName": "",
+        "EndYear": 1481,
+        "NumberOfFatalities": 0,
+        "NumberOfMilitaryFatalities": 0,
+        "PosX": 1780,
+        "PosY": 247,
+        "StartYear": 1481,
+        "Summary": "Siberian Tartars-Kazan Tartars, 1481"
     },
     {
         "Actors": [
@@ -30961,14 +31204,19 @@ let conflictData =
                 "Name": "Muscovy",
                 "PosX": 1303,
                 "PosY": 444
+            },
+            {
+                "Name": "Kazan Tartars",
+                "PosX": 1780,
+                "PosY": 247
             }
         ],
         "CommonName": "",
         "EndYear": 1487,
         "NumberOfFatalities": 0,
         "NumberOfMilitaryFatalities": 0,
-        "PosX": 1303,
-        "PosY": 444,
+        "PosX": 1541,
+        "PosY": 345,
         "StartYear": 1487,
         "Summary": "Muscovy-Kazan Tartars, 1487"
     },
@@ -31133,6 +31381,11 @@ let conflictData =
     {
         "Actors": [
             {
+                "Name": "Bohemia",
+                "PosX": 1450,
+                "PosY": 300
+            },
+            {
                 "Name": "Poland",
                 "PosX": 1490,
                 "PosY": 280
@@ -31142,8 +31395,8 @@ let conflictData =
         "EndYear": 1491,
         "NumberOfFatalities": 0,
         "NumberOfMilitaryFatalities": 0,
-        "PosX": 1490,
-        "PosY": 280,
+        "PosX": 1470,
+        "PosY": 290,
         "StartYear": 1490,
         "Summary": "Bohemia-Poland, 1490-91"
     },
@@ -31214,14 +31467,19 @@ let conflictData =
                 "Name": "Crimean Tartars",
                 "PosX": 1605,
                 "PosY": 327
+            },
+            {
+                "Name": "Kazan Tartars",
+                "PosX": 1780,
+                "PosY": 247
             }
         ],
         "CommonName": "",
         "EndYear": 1502,
         "NumberOfFatalities": 0,
         "NumberOfMilitaryFatalities": 0,
-        "PosX": 1605,
-        "PosY": 327,
+        "PosX": 1692,
+        "PosY": 287,
         "StartYear": 1491,
         "Summary": "Crimean Tartars-Kazan Tartars, 1491-1502"
     },
@@ -32085,14 +32343,19 @@ let conflictData =
                 "Name": "Crimean Tartars",
                 "PosX": 1605,
                 "PosY": 327
+            },
+            {
+                "Name": "Kazan Tartars",
+                "PosX": 1780,
+                "PosY": 247
             }
         ],
         "CommonName": "",
         "EndYear": 1502,
         "NumberOfFatalities": 0,
         "NumberOfMilitaryFatalities": 0,
-        "PosX": 1605,
-        "PosY": 327,
+        "PosX": 1692,
+        "PosY": 287,
         "StartYear": 1502,
         "Summary": "Crimean Tartars-Kazan Tartars, 1502"
     },
@@ -32170,14 +32433,19 @@ let conflictData =
                 "Name": "Spain",
                 "PosX": 1317,
                 "PosY": 375
+            },
+            {
+                "Name": "Indians (Panama)",
+                "PosX": 500,
+                "PosY": 350
             }
         ],
         "CommonName": "",
         "EndYear": 1503,
         "NumberOfFatalities": 0,
         "NumberOfMilitaryFatalities": 0,
-        "PosX": 1317,
-        "PosY": 375,
+        "PosX": 908,
+        "PosY": 362,
         "StartYear": 1503,
         "Summary": "Spain-Indians (Panama), 1503"
     },
@@ -32248,14 +32516,19 @@ let conflictData =
                 "Name": "Spain",
                 "PosX": 1317,
                 "PosY": 375
+            },
+            {
+                "Name": "Indians (Panama)",
+                "PosX": 500,
+                "PosY": 350
             }
         ],
         "CommonName": "",
         "EndYear": 1504,
         "NumberOfFatalities": 0,
         "NumberOfMilitaryFatalities": 0,
-        "PosX": 1317,
-        "PosY": 375,
+        "PosX": 908,
+        "PosY": 362,
         "StartYear": 1504,
         "Summary": "Spain-Indians (Panama), 1504"
     },
@@ -32374,6 +32647,11 @@ let conflictData =
     {
         "Actors": [
             {
+                "Name": "Kazan Tartars",
+                "PosX": 1780,
+                "PosY": 247
+            },
+            {
                 "Name": "Novgorod",
                 "PosX": 1580,
                 "PosY": 233
@@ -32383,8 +32661,8 @@ let conflictData =
         "EndYear": 1505,
         "NumberOfFatalities": 0,
         "NumberOfMilitaryFatalities": 0,
-        "PosX": 1580,
-        "PosY": 233,
+        "PosX": 1680,
+        "PosY": 240,
         "StartYear": 1505,
         "Summary": "Kazan Tartars-Novgorod, 1505"
     },
@@ -32831,14 +33109,19 @@ let conflictData =
                 "Name": "Spain",
                 "PosX": 1317,
                 "PosY": 375
+            },
+            {
+                "Name": "Indians (San Sebastian, Colombia)",
+                "PosX": 500,
+                "PosY": 350
             }
         ],
         "CommonName": "",
         "EndYear": 1510,
         "NumberOfFatalities": 0,
         "NumberOfMilitaryFatalities": 0,
-        "PosX": 1317,
-        "PosY": 375,
+        "PosX": 908,
+        "PosY": 362,
         "StartYear": 1510,
         "Summary": "Spain-Indians (San Sebastian, Colombia), 1510"
     },
@@ -33274,14 +33557,19 @@ let conflictData =
                 "Name": "Spain",
                 "PosX": 1317,
                 "PosY": 375
+            },
+            {
+                "Name": "Indians (Panama)",
+                "PosX": 500,
+                "PosY": 350
             }
         ],
         "CommonName": "",
         "EndYear": 1515,
         "NumberOfFatalities": 0,
         "NumberOfMilitaryFatalities": 0,
-        "PosX": 1317,
-        "PosY": 375,
+        "PosX": 908,
+        "PosY": 362,
         "StartYear": 1515,
         "Summary": "Spain-Indians (Panama), 1515"
     },
@@ -33291,14 +33579,19 @@ let conflictData =
                 "Name": "Spain",
                 "PosX": 1317,
                 "PosY": 375
+            },
+            {
+                "Name": "Indians (Curacao, Bonaire)",
+                "PosX": 500,
+                "PosY": 350
             }
         ],
         "CommonName": "",
         "EndYear": 1515,
         "NumberOfFatalities": 0,
         "NumberOfMilitaryFatalities": 0,
-        "PosX": 1317,
-        "PosY": 375,
+        "PosX": 908,
+        "PosY": 362,
         "StartYear": 1515,
         "Summary": "Spain-Indians (Curacao, Bonaire), 1515"
     },
@@ -48279,6 +48572,23 @@ let conflictData =
     {
         "Actors": [
             {
+                "Name": "Indians (N. Carolina)",
+                "PosX": 500,
+                "PosY": 350
+            }
+        ],
+        "CommonName": "Tuscarura War",
+        "EndYear": 1711,
+        "NumberOfFatalities": 0,
+        "NumberOfMilitaryFatalities": 0,
+        "PosX": 500,
+        "PosY": 350,
+        "StartYear": 1711,
+        "Summary": "American settlers-Indians (N. Carolina), 1711"
+    },
+    {
+        "Actors": [
+            {
                 "Name": "Britain",
                 "PosX": 1335,
                 "PosY": 280
@@ -48477,6 +48787,23 @@ let conflictData =
         "PosY": 242,
         "StartYear": 1715,
         "Summary": "Prussia-Sweden, 1715-20"
+    },
+    {
+        "Actors": [
+            {
+                "Name": "Indians (S. Carolina)",
+                "PosX": 500,
+                "PosY": 350
+            }
+        ],
+        "CommonName": "",
+        "EndYear": 1715,
+        "NumberOfFatalities": 0,
+        "NumberOfMilitaryFatalities": 0,
+        "PosX": 500,
+        "PosY": 350,
+        "StartYear": 1715,
+        "Summary": "American settlers-Indians (S. Carolina), 1715"
     },
     {
         "Actors": [

@@ -4,15 +4,18 @@ class Conflict
     {
         // private member variables
         let data = conflictData;
+
         let maxTotalDiameter = maxCircleDiameter(data.NumberOfFatalities);
         let maxMilDiameter = maxCircleDiameter(data.NumberOfMilitaryFatalities);
-        let strokeColor = color(200, 100, 100);
-        let fillColor = color(250, 150, 150);
-
+        
         if (maxTotalDiameter < 50)
         {
             maxTotalDiameter = 50;
         }
+
+        let colorGen = new ConflictColorGenerator();
+        let strokeColor = colorGen.getHardColor();
+        let fillColor = colorGen.getSoftColor();
 
         // public methods
         this.renderToCanvas = function(year)
@@ -59,7 +62,7 @@ class Conflict
         function drawActorLine(pos1X, pos1Y, pos2X, pos2Y)
         {
             strokeWeight(3);
-            stroke(strokeColor);
+            stroke(fillColor);
 
             line(pos1X, pos1Y, pos2X, pos2Y);
         }
@@ -69,12 +72,14 @@ class Conflict
             let flagSize = 15;
             let flagPostHeight = 40;
 
-            strokeWeight(5);
             stroke(strokeColor);
             fill(fillColor);
 
-            line(posX, posY - (flagPostHeight - flagSize), posX, posY);
+            strokeWeight(3);
             rect(posX, posY - flagPostHeight, flagSize, flagSize);
+            
+            strokeWeight(2);
+            line(posX, posY - flagPostHeight, posX, posY);
         }
 
         function maxCircleDiameter(numberOfFatalities)

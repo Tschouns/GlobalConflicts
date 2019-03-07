@@ -8,9 +8,9 @@ class Conflict
         let maxTotalDiameter = maxCircleDiameter(data.NumberOfFatalities);
         let maxMilDiameter = maxCircleDiameter(data.NumberOfMilitaryFatalities);
         
-        if (maxTotalDiameter < 50)
+        if (maxTotalDiameter < 60)
         {
-            maxTotalDiameter = 50;
+            maxTotalDiameter = 60;
         }
 
         let colorGen = new ConflictColorGenerator();

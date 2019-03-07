@@ -16,14 +16,19 @@ class ConflictColorGenerator
         function setRandomColors()
         {
             let baseBrightness = 160;
-            let maxOffset = 70;
+            let maxOffset = 60;
+            let softFactor = 1.3;
 
             let r = baseBrightness + getRandomInt(-maxOffset, maxOffset);
             let g = baseBrightness + getRandomInt(-maxOffset, maxOffset);
-            let b = baseBrightness + getRandomInt(-maxOffset, maxOffset);
+
+            let remainingSpan = 2 * maxOffset - Math.abs(r - g);
+            let bOffset = (r + g - 2 * baseBrightness) < 0 ? remainingSpan : -remainingSpan;
+
+            let b = baseBrightness + bOffset;
 
             hardColor = color(r, g, b);
-            softColor = color(r * 1.2, g * 1.2, b * 1.2);
+            softColor = color(r * softFactor, g * softFactor, b * softFactor);
         }
 
         function getRandomInt(min, max)

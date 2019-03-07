@@ -1,5 +1,6 @@
 body
 {
+    background-color: gainsboro;
     font-family: "Verdana", Verdana, Tahoma, sans-serif;
 }
 
@@ -19,6 +20,10 @@ body
     position: relative;
     width: 2700px;
     height: 1350px;
+
+    border-style: solid;
+    border-color: gainsboro;
+    border-width: 1px;
 
     background-image: url("../images/worldmap.jpg");
 }
@@ -46,7 +51,7 @@ body
     border-width: 10px;
     border-radius: 12px;
     
-    background-color: lightblue;
+    background-color: ghostwhite;
 }
 
 #controlDiv
@@ -101,7 +106,7 @@ body
     width: 90px;
     height: 90px;
 
-    background-color:brown;
+    background-color:cornflowerblue;
     border: none;
     border-radius: 50%;
     color: white;
@@ -114,5 +119,5 @@ body
 
 #buttonDiv button.active
 {
-    background-color:lightcoral;
+    background-color:rgb(172, 203, 243);
 }

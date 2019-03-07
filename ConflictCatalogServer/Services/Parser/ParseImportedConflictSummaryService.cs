@@ -35,6 +35,7 @@ namespace Services.Parser
                 conflict.StartYear = int.Parse(importedConflict.StartYear);
                 conflict.EndYear = int.Parse(importedConflict.EndYear);
                 conflict.NumberOfFatalities = int.Parse(importedConflict.TotalFatalities);
+                conflict.NumberOfMilitaryFatalities = int.Parse(importedConflict.MilFatalities);
 
                 conflicts.Add(conflict);
             }

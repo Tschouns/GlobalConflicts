@@ -13,6 +13,7 @@ namespace Services.ConflictJson.JsonModels
         public int StartYear { get; set; }
         public int EndYear { get; set; }
         public int NumberOfFatalities { get; set; }
+        public int NumberOfMilitaryFatalities { get; set; }
         public int PosX { get; set; }
         public int PosY { get; set; }
 

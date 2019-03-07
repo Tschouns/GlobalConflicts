@@ -40,13 +40,13 @@ namespace Services.ConflictJson
             var conflicts = this.parseImportedConflictSummaryService.ParseImportedConflicts(importedConflicts).ToList();
             var jsonConflicts = MapToJsonConflicts(conflicts, nations);
 
-            var serializer = new DataContractJsonSerializer(typeof(List<Conflict>));
-            var memoryStream = new MemoryStream();
-            serializer.WriteObject(memoryStream, jsonConflicts);
+            // Sort for optimal visibility when displayed.
+            var orderedJsonConflicts = jsonConflicts
+                .OrderByDescending(c => c.NumberOfFatalities)
+                .ThenBy(c => c.StartYear)
+                .ToList();
 
-            memoryStream.Position = 0;
-            var streamReader = new StreamReader(memoryStream);
-            var jsonString = streamReader.ReadToEnd();
+            var jsonString = this.SerializeConflicts(orderedJsonConflicts);
 
             return jsonString;
         }
@@ -74,6 +74,7 @@ namespace Services.ConflictJson
                     StartYear = conflict.StartYear,
                     EndYear = conflict.EndYear,
                     NumberOfFatalities = conflict.NumberOfFatalities,
+                    NumberOfMilitaryFatalities = conflict.NumberOfMilitaryFatalities,
                 };
 
                 foreach (var actor in actors)
@@ -102,6 +103,21 @@ namespace Services.ConflictJson
             }
 
             return jsonConflicts;
+        }
+
+        private string SerializeConflicts(IReadOnlyList<Conflict> jsonConflicts)
+        {
+            Argument.AssertIsNotNull(jsonConflicts, nameof(jsonConflicts));
+
+            var serializer = new DataContractJsonSerializer(typeof(List<Conflict>));
+            var memoryStream = new MemoryStream();
+            serializer.WriteObject(memoryStream, jsonConflicts);
+
+            memoryStream.Position = 0;
+            var streamReader = new StreamReader(memoryStream);
+            var jsonString = streamReader.ReadToEnd();
+
+            return jsonString;
         }
     }
 }

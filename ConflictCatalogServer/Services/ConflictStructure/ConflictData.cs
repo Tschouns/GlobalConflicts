@@ -11,6 +11,7 @@ namespace Services.ConflictStructure
         public int StartYear { get; set; }
         public int EndYear { get; set; }
         public int NumberOfFatalities { get; set; }
+        public int NumberOfMilitaryFatalities { get; set; }
 
         public IList<SideData> Sides => this.sides;
     }

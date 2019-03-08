@@ -66,6 +66,7 @@ function initializeSketch()
     {
         speed: 0,
         year: 1400,
+        highlightedConflict: null,
     };
 }
 
@@ -84,7 +85,8 @@ function drawSketch()
     clear();
     conflicts.forEach(conflict =>
         {
-            conflict.drawToCanvas();
+            var highlight = conflict == state.highlightedConflict;
+            conflict.drawToCanvas(highlight);
         });
 
     yearDiv.innerHTML = Math.floor(state.year);
@@ -117,6 +119,21 @@ function updateYearProgress()
 function onSliderValueChanged()
 {
     state.year = Number(slider.value);
+}
+
+function onConflictDivMouseHover()
+{
+    for (let i = conflicts.length - 1; i >= 0; i--)
+    {
+        let conflict = conflicts[i];
+        if (conflict.checkHover())
+        {
+            state.highlightedConflict = conflict;
+            return;
+        }
+    }
+
+    state.highlightedConflict = null;
 }
 
 function onPauseButtonClick()

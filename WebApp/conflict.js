@@ -14,54 +14,58 @@ class Conflict
         }
 
         let colorGen = new ConflictColorGenerator();
-        let strokeColor = colorGen.getHardColor();
-        let fillColor = colorGen.getSoftColor();
 
         let currentTotalDiameter = 0;
         let currentMilDiameter = 0;
         let isActive = false;
+        let isCursorHoveringConflict = false;
 
         // public methods
         this.update = function(year)
         {
-            // check is active.
+            // check status.
             isActive = checkIsActive(year);
+            isCursorHoveringConflict = checkIsCursorHoveringConflict();
 
             // update circle diameter.
-            if (isActive)
+            if (!isActive)
             {
-                let progressFactor = (year - data.StartYear) / (data.EndYear - data.StartYear + 1);
-                currentTotalDiameter = maxTotalDiameter * progressFactor;
-                currentMilDiameter = maxMilDiameter * progressFactor;
+                currentTotalDiameter = 0;
+                currentMilDiameter = 0;
+                return;
             }
+
+            let progressFactor = (year - data.StartYear) / (data.EndYear - data.StartYear + 1);
+            currentTotalDiameter = maxTotalDiameter * progressFactor;
+            currentMilDiameter = maxMilDiameter * progressFactor;
         }
 
-        this.drawToCanvas = function()
+        this.drawToCanvas = function(highlight)
         {
             if (!isActive)
             {
                 return;
             }
+
+            let strokeColor = highlight ? colorGen.getHardHighlightColor() : colorGen.getHardColor();
+            let fillColor = highlight ? colorGen.getSoftHighlightColor() : colorGen.getSoftColor();
     
             data.Actors.forEach(actor =>
                 {
-                    drawActorLine(data.PosX, data.PosY, actor.PosX, actor.PosY);
+                    drawActorLine(data.PosX, data.PosY, actor.PosX, actor.PosY, fillColor);
                 });
 
-            drawCircle();
+            drawCircle(strokeColor, fillColor);
 
             data.Actors.forEach(actor =>
                 {
-                    drawActorFlag(actor.PosX, actor.PosY);
+                    drawActorFlag(actor.PosX, actor.PosY, strokeColor, fillColor);
                 });
         }
 
         this.checkHover = function()
         {
-            if (!isActive)
-            {
-                return false;
-            }
+            return isActive && isCursorHoveringConflict;
         }
 
         // private helper methods
@@ -83,10 +87,10 @@ class Conflict
 
             let c = Math.sqrt(a * a + b * b);
 
-            return c < (currentDiameter / 2);
+            return c < (currentTotalDiameter / 2);
         }
 
-        function drawCircle()
+        function drawCircle(strokeColor, fillColor)
         {
             // main circle
             strokeWeight(5);
@@ -100,15 +104,15 @@ class Conflict
             ellipse(data.PosX, data.PosY, currentMilDiameter, currentMilDiameter);
         }
 
-        function drawActorLine(pos1X, pos1Y, pos2X, pos2Y)
+        function drawActorLine(pos1X, pos1Y, pos2X, pos2Y, color)
         {
             strokeWeight(3);
-            stroke(fillColor);
+            stroke(color);
 
             line(pos1X, pos1Y, pos2X, pos2Y);
         }
 
-        function drawActorFlag(posX, posY)
+        function drawActorFlag(posX, posY, strokeColor, fillColor)
         {
             let flagSize = 15;
             let flagPostHeight = 40;
@@ -126,7 +130,6 @@ class Conflict
         function maxCircleDiameter(numberOfFatalities)
         {
             let scale = 0.2;
-
             let diameter = Math.sqrt(numberOfFatalities / Math.PI) * 2 * scale;
 
             return diameter;

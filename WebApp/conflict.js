@@ -17,14 +17,27 @@ class Conflict
         let strokeColor = colorGen.getHardColor();
         let fillColor = colorGen.getSoftColor();
 
-        let currentDiameter = 0;
+        let currentTotalDiameter = 0;
+        let currentMilDiameter = 0;
         let isActive = false;
 
         // public methods
-        this.renderToCanvas = function(year)
+        this.update = function(year)
         {
+            // check is active.
             isActive = checkIsActive(year);
 
+            // update circle diameter.
+            if (isActive)
+            {
+                let progressFactor = (year - data.StartYear) / (data.EndYear - data.StartYear + 1);
+                currentTotalDiameter = maxTotalDiameter * progressFactor;
+                currentMilDiameter = maxMilDiameter * progressFactor;
+            }
+        }
+
+        this.drawToCanvas = function()
+        {
             if (!isActive)
             {
                 return;
@@ -35,12 +48,20 @@ class Conflict
                     drawActorLine(data.PosX, data.PosY, actor.PosX, actor.PosY);
                 });
 
-            drawCircle(year);
+            drawCircle();
 
             data.Actors.forEach(actor =>
                 {
                     drawActorFlag(actor.PosX, actor.PosY);
                 });
+        }
+
+        this.checkHover = function()
+        {
+            if (!isActive)
+            {
+                return false;
+            }
         }
 
         // private helper methods
@@ -55,23 +76,28 @@ class Conflict
             return true;
         }
 
-        function drawCircle(year)
+        function checkIsCursorHoveringConflict()
         {
-            let progressFactor = (year - data.StartYear) / (data.EndYear - data.StartYear);
-            
-            currentDiameter = maxTotalDiameter * progressFactor;
-            
+            let a = Math.abs(mouseX - data.PosX);
+            let b = Math.abs(mouseY - data.PosY);
+
+            let c = Math.sqrt(a * a + b * b);
+
+            return c < (currentDiameter / 2);
+        }
+
+        function drawCircle()
+        {
             // main circle
             strokeWeight(5);
             stroke(strokeColor);
             fill(fillColor);
-
-            ellipse(data.PosX, data.PosY, currentDiameter, currentDiameter);
+            ellipse(data.PosX, data.PosY, currentTotalDiameter, currentTotalDiameter);
 
             // inner circle (for military fatalities)
             noStroke();
             fill(strokeColor);
-            ellipse(data.PosX, data.PosY, maxMilDiameter * progressFactor, maxMilDiameter * progressFactor);
+            ellipse(data.PosX, data.PosY, currentMilDiameter, currentMilDiameter);
         }
 
         function drawActorLine(pos1X, pos1Y, pos2X, pos2Y)

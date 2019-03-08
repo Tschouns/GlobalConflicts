@@ -72,16 +72,20 @@ function initializeSketch()
 function updateSketch()
 {
     clock.update();
-    updateYearSlider();
+    updateYearProgress();
+    conflicts.forEach(conflict =>
+        {
+            conflict.update(state.year);
+        });
 }
 
 function drawSketch()
 {
     clear();
     conflicts.forEach(conflict =>
-    {
-        conflict.renderToCanvas(state.year);
-    });
+        {
+            conflict.drawToCanvas();
+        });
 
     yearDiv.innerHTML = Math.floor(state.year);
 }
@@ -99,7 +103,7 @@ function createConflictArray(conflictData)
     return conflictArray;
 }
 
-function updateYearSlider()
+function updateYearProgress()
 {
     state.year = state.year + state.speed * clock.getTimePassed() / 1000; // ...because milliseconds.
     if (state.year > 2000)

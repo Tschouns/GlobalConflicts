@@ -1,6 +1,7 @@
 let buttons;
 let slider;
 let yearDiv;
+let detailsDiv;
 let sketchCanvas;
 
 // Sketch variables.
@@ -24,6 +25,7 @@ function setup()
         };
         slider = document.getElementById('slider');
         yearDiv = document.getElementById('yearDiv');
+        detailsDiv = document.getElementById('detailsDiv');
 
         // Create canvas.
         let parentDiv = document.getElementById('conflictsDiv');
@@ -67,6 +69,7 @@ function initializeSketch()
         speed: 0,
         year: 1400,
         highlightedConflict: null,
+        selectedConflict: null,
     };
 }
 
@@ -114,6 +117,18 @@ function updateYearProgress()
     }
 }
 
+function setDetails()
+{
+    let selection = state.selectedConflict;
+    if (selection == null)
+    {
+        detailsDiv.innerHTML = "";
+        return;
+    }
+
+    detailsDiv.innerHTML = selection.getSummary();
+}
+
 // Event handlers
 
 function onSliderValueChanged()
@@ -134,6 +149,13 @@ function onConflictDivMouseHover()
     }
 
     state.highlightedConflict = null;
+}
+
+function onConflictDivClick()
+{
+    state.selectedConflict = state.highlightedConflict;
+
+    setDetails();
 }
 
 function onPauseButtonClick()

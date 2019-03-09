@@ -21,6 +21,8 @@ class Conflict
         let isCursorHoveringConflict = false;
 
         // public methods
+        this.getSummary = () => { return data.Summary; }
+
         this.update = function(year)
         {
             // check status.

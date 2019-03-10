@@ -1,4 +1,4 @@
-let conflictData =
+conflictData = 
 [
     {
         "Actors": [
@@ -112,6 +112,23 @@ let conflictData =
     {
         "Actors": [
             {
+                "Name": "Holy Roman Empire",
+                "PosX": 1450,
+                "PosY": 350
+            }
+        ],
+        "CommonName": "Thirty Years' War",
+        "EndYear": 1648,
+        "NumberOfFatalities": 8000000,
+        "NumberOfMilitaryFatalities": 2073000,
+        "PosX": 1450,
+        "PosY": 350,
+        "StartYear": 1618,
+        "Summary": "Holy Roman Empire, 1618-48"
+    },
+    {
+        "Actors": [
+            {
                 "Name": "Germany (massacre of Jews)",
                 "PosX": 1431,
                 "PosY": 290
@@ -181,6 +198,23 @@ let conflictData =
         "PosY": 398,
         "StartYear": 1937,
         "Summary": "Japan-China, 1937-45"
+    },
+    {
+        "Actors": [
+            {
+                "Name": "France",
+                "PosX": 1365,
+                "PosY": 325
+            }
+        ],
+        "CommonName": "Wars of the French Revolution",
+        "EndYear": 1802,
+        "NumberOfFatalities": 1915000,
+        "NumberOfMilitaryFatalities": 649000,
+        "PosX": 1365,
+        "PosY": 325,
+        "StartYear": 1791,
+        "Summary": "Wars of the French Revolution, France, 1791-1802"
     },
     {
         "Actors": [

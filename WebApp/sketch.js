@@ -88,7 +88,10 @@ function drawSketch()
     clear();
     conflicts.forEach(conflict =>
         {
-            var highlight = conflict == state.highlightedConflict;
+            var highlight =
+                conflict == state.highlightedConflict ||
+                conflict == state.selectedConflict;
+                
             conflict.drawToCanvas(highlight);
         });
 

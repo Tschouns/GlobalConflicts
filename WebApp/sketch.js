@@ -81,6 +81,8 @@ function updateSketch()
         {
             conflict.update(state.year);
         });
+
+    slider.value = state.year;
 }
 
 function drawSketch()
@@ -91,7 +93,7 @@ function drawSketch()
             var highlight =
                 conflict == state.highlightedConflict ||
                 conflict == state.selectedConflict;
-                
+
             conflict.drawToCanvas(highlight);
         });
 
@@ -145,7 +147,7 @@ function createParagraph(content)
 
 function createSearchLink(conflict)
 {
-    let searchText = "conflict " + conflict.getSummary();
+    let searchText = "Conflict " + conflict.getSummary();
 
     // If a common name is defined, though, we use that instead...
     if (conflict.getCommonName().length > 0)

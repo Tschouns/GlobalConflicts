@@ -21,7 +21,11 @@ class Conflict
         let isCursorHoveringConflict = false;
 
         // public methods
+        this.getCommonName = () => { return data.CommonName; }
         this.getSummary = () => { return data.Summary; }
+        this.getStartYear = () => { return data.StartYear; }
+        this.getEndYear = () => { return data.EndYear; }
+        this.getNumberOfFatalities = () => {return data.NumberOfFatalities; }
 
         this.update = function(year)
         {

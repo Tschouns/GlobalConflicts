@@ -122,11 +122,21 @@ function setDetails()
     let selection = state.selectedConflict;
     if (selection == null)
     {
-        detailsDiv.innerHTML = "";
+        detailsDiv.innerHTML = createTableCell("-");
         return;
     }
 
-    detailsDiv.innerHTML = selection.getSummary();
+    detailsDiv.innerHTML =
+        createTableCell(selection.getCommonName()) +
+        createTableCell(selection.getSummary()) +
+        // createTableCell("Begin: " + selection.getStartYear()) +
+        // createTableCell("End: " + selection.getEndYear()) +
+        createTableCell("Fatalities: " + (selection.getNumberOfFatalities() > 0 ? selection.getNumberOfFatalities() : "-"));
+}
+
+function createTableCell(content)
+{
+    return "<p>" + content + "</p>";
 }
 
 // Event handlers

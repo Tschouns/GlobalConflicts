@@ -122,21 +122,36 @@ function setDetails()
     let selection = state.selectedConflict;
     if (selection == null)
     {
-        detailsDiv.innerHTML = createTableCell("-");
+        detailsDiv.innerHTML = createParagraph("-");
         return;
     }
 
     detailsDiv.innerHTML =
-        createTableCell(selection.getCommonName()) +
-        createTableCell(selection.getSummary()) +
+        createParagraph(selection.getCommonName()) +
+        createParagraph(selection.getSummary()) +
         // createTableCell("Begin: " + selection.getStartYear()) +
         // createTableCell("End: " + selection.getEndYear()) +
-        createTableCell("Fatalities: " + (selection.getNumberOfFatalities() > 0 ? selection.getNumberOfFatalities() : "-"));
+        createParagraph("Fatalities: " + (selection.getNumberOfFatalities() > 0 ? selection.getNumberOfFatalities() : "-")) +
+        createParagraph(createSearchLink(selection));
 }
 
-function createTableCell(content)
+function createParagraph(content)
 {
     return "<p>" + content + "</p>";
+}
+
+function createSearchLink(conflict)
+{
+    let searchText = "conflict " + conflict.getSummary();
+
+    // If a common name is defined, though, we use that instead...
+    if (conflict.getCommonName().length > 0)
+    {
+        searchText = conflict.getCommonName();
+    }
+
+    // create link tag
+    return "<a href=\"https://duckduckgo.com/?q=" + searchText + "\" target=\"_blank\">More Info</a>";
 }
 
 // Event handlers
@@ -163,9 +178,16 @@ function onConflictDivMouseHover()
 
 function onConflictDivClick()
 {
-    state.selectedConflict = state.highlightedConflict;
+    try
+    {
+        state.selectedConflict = state.highlightedConflict;
 
-    setDetails();
+        setDetails();
+    }
+    catch(error)
+    {
+        alert(error.message); 
+    }
 }
 
 function onPauseButtonClick()

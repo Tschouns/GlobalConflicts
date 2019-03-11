@@ -97,7 +97,7 @@ function drawSketch()
             conflict.drawToCanvas(highlight);
         });
 
-    yearDiv.innerHTML = Math.floor(state.year);
+    yearDiv.innerHTML = "<span>" + Math.floor(state.year) + "</span>";
 }
 
 // Helper functions

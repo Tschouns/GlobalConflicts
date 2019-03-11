@@ -31,7 +31,6 @@ body
 #conflictsDiv
 {
     position: relative;
-    /* float: left; */
     top: 0px;
     left: 0px;
     width: 100%;
@@ -73,26 +72,27 @@ body
 
 #buttonDiv
 {
-    position: relative;
-    float: left;
+    position: absolute;
     width: 400px;
     height: 100%;
 }
 
 #sliderDiv
 {    
-    position: relative;
-    float: left;
+    position: absolute;
+    left: 400px;
     width: 2100px;
     height: 100%;
 }
 
 #yearDiv
 {
-    position: relative;
-    float: left;
+    position: absolute;
+    left: 2500px;
     width: 200px;
     height: 100%;
+
+    padding-top: 20px;
 
     text-align: center;
     vertical-align: middle;

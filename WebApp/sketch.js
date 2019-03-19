@@ -96,8 +96,22 @@ function drawSketch()
 
             conflict.drawToCanvas(highlight);
         });
+    
+    // redraw highlighted / selected conflict on top.
+    drawSingleHighlightedConflictIfDefined(state.selectedConflict);
+    drawSingleHighlightedConflictIfDefined(state.highlightedConflict);
 
     yearDiv.innerHTML = "<span>" + Math.floor(state.year) + "</span>";
+}
+
+function drawSingleHighlightedConflictIfDefined(conflict)
+{
+    if (conflict == null)
+    {
+        return;
+    }
+
+    conflict.drawToCanvas(true);
 }
 
 // Helper functions
